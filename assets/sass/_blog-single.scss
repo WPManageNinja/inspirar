@@ -1,0 +1,274 @@
+/********* single blog css  **********/
+.single-blog-related-post{
+	margin-bottom: 20px;
+	h3{
+		color: $headingTextColor;
+		font-size: 25px;
+		font-weight: 700;
+		border-bottom: 1px solid #d9dfe6;
+	    padding-bottom: 20px;
+	    margin-bottom: 30px;
+	    margin-top: 0;
+	}
+	.single-related-post{
+		.single-related-post-content{
+			h4{
+				margin-bottom: 5px;
+				a{
+					color: $primaryColor;
+					font-size: 20px;
+					font-weight: 500;
+					padding-top: 20px;
+					display: block;
+				}
+			}
+			p{
+				margin-bottom: 0;
+			}
+		}
+		margin-bottom: 30px;
+	}
+}
+.comments-area{
+	h3.comments-title,
+	h3.comment-reply-title {
+		color: $headingTextColor;
+		font-size: 25px;
+		font-weight: 700;
+		border-bottom: 1px solid #d9dfe6;
+	    padding-bottom: 20px;
+	    margin-bottom: 30px;
+	    margin-top: 0;
+	}
+	
+	ol.comment-list,
+	ol.children{
+    	list-style: none;
+    	padding: 0;
+    	margin: 0;
+    	.single-comment{
+    		.avatar{
+				margin-right: 30px;
+				border-radius: 50px;
+    		}
+    		.media-body{
+    			h4.author{
+    				color: $headingTextColor;
+    				font-size: 15px;
+    				text-transform: capitalize;
+    				margin-bottom: 5px;
+    			}
+    			.comment-text{
+    				p{
+    					margin-bottom: 15px;
+    				}
+    			}
+    			em {
+		    	  color: #D30015;
+		    	}
+    		}
+    		a.comment-reply-link {
+	    	  	  color: $liteColor;
+				  display: inline-block;
+				  border: 1px solid rgb(217, 222, 229);
+				  border-radius: 4px;
+				  padding: 6px 15px;
+				  font-weight: 500;
+				  font-size: 15px;
+				  background-image: linear-gradient( 0deg, rgb(252,94,17) 0%, rgb(255,154,68) 100%);
+				  background-image: -moz-linear-gradient( 0deg, rgb(252,94,17) 0%, rgb(255,154,68) 100%);
+				  background-image: -webkit-linear-gradient( 0deg, rgb(252,94,17) 0%, rgb(255,154,68) 100%);
+				  background-image: -ms-linear-gradient( 0deg, rgb(252,94,17) 0%, rgb(255,154,68) 100%);
+				  box-shadow: 0px 3px 12px 0px rgba(171, 72, 19, 0.29);
+	    	}
+    	}
+
+    	.comment-metadata {
+    	    margin-left: 50px;
+    	    font-size: 12px;
+          	padding-bottom: 10px;
+	        a{
+	            border-bottom: none;
+	            color: $bodyTextColor;
+	            &.comment-edit-link{
+	              border-bottom: 3px solid #cbe4ff;
+	            }
+	        }
+    	}
+    	li.comment {
+    	    margin-bottom: 30px;
+    	}
+    	li.comment:last-child{
+    	  margin-bottom: 0;
+    	  padding-bottom: 0;
+    	}
+    	.comment-content p {
+    	    margin: 0;
+    	}
+    	
+    	b.fn {
+    	    font-size: 14px;
+    	    text-transform: capitalize;
+          a{
+            border-bottom: none;
+            color: $bodyTextColor;
+          }
+    	}
+    	
+    	.children{
+    	  padding-left: 65px;
+    	  @media #{ $tab } {
+    	   	padding-left: 40px;
+    	  }
+    	  @media #{ $mobile-sm } {
+    	   	padding-left: 20px;
+    	  }
+    	}
+    	@media (max-width: 320px) {
+    	  .children{
+    	    padding-left: 15px;
+    	  }
+    	}
+    	li ol.children{
+    	  margin-top: 30px;
+    	}
+    }
+
+    ol.comment-list{
+	   	margin-bottom: 50px;
+	}
+	.comment-form {
+		label{
+	        font-size: 15px;
+	        color: $headingTextColor;
+	        padding-bottom: 15px;
+	        display: block;
+    		font-weight: 700;
+    		margin-bottom: 0;
+		}
+		textarea,
+		input{
+		  width: 100%;
+		  border: none;
+		  background-color: #fff;
+		  border: 1px solid #e0e0e0;
+		  margin-bottom: 10px;
+		  box-shadow: none;
+		  padding: 20px;
+		  border-radius: 4px;
+		  &:focus{
+		    border: 1px solid #e0e0e0;
+		  	outline: none;
+		  }
+		}
+		textarea{
+			margin-bottom: 0;
+			padding-top: 10px;
+			height: 170px;
+		}
+	  	.form-control[type="text"]::-webkit-input-placeholder ,
+	  	textarea.form-control::-webkit-input-placeholder ,
+	  	.form-control[type="email"]::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+		    font-size: 12px;
+		    color: #898989;
+	  	}
+	  	.form-control[type="text"]::-moz-placeholder,
+	  	textarea.form-control::-moz-placeholder,
+	  	.form-control[type="email"]::-moz-placeholder { /* Firefox 19+ */
+		    font-size: 12px;
+		    color: #898989;
+	  	}
+	  	.form-control[type="text"]::-ms-input-placeholder,
+	  	textarea.form-control::-ms-input-placeholder,
+	  	.form-control[type="email"]::-ms-input-placeholder { /* IE 10+ */
+		    font-size: 12px;
+		    color: #898989;
+	 	}
+	  	.form-control[type="text"]::-moz-placeholder,
+	  	textarea.form-control::-moz-placeholder,
+	  	.form-control[type="email"]::-moz-placeholder { /* Firefox 18- */
+		    font-size: 12px;
+		    color: #898989;
+	  	}
+		input{
+		  height: 50px;
+		  margin-bottom: 30px;
+		}
+		input[type="submit"]{
+		  width: 100% !important;
+		  display: inline-block;
+		  padding: 17px 20px;
+		  color: $liteColor;
+		  text-transform: capitalize;
+		  border-radius: 4px;
+		  font-weight: 500;
+		  font-size: 20px;
+		  margin-bottom: 0;
+		  height: auto;
+		  margin-bottom: 0;
+		  background-image: linear-gradient( 0deg, rgb(252,94,17) 0%, rgb(255,154,68) 100%);
+		  background-image: -moz-linear-gradient( 0deg, rgb(252,94,17) 0%, rgb(255,154,68) 100%);
+		  background-image: -webkit-linear-gradient( 0deg, rgb(252,94,17) 0%, rgb(255,154,68) 100%);
+		  background-image: -ms-linear-gradient( 0deg, rgb(252,94,17) 0%, rgb(255,154,68) 100%);
+		  box-shadow: 0px 3px 12px 0px rgba(171, 72, 19, 0.29);
+		  border: 1px solid rgb(217, 222, 229);
+		}
+
+	} 
+}
+
+li.comment{
+	position: relative;
+	@media #{ $mobile } {
+		position: inherit;
+	}
+	ol.children{
+		&:before{
+			position: absolute;
+		    border-left: 2px solid #e8e8e8;
+		    content: "";
+		    width: 30px;
+		    top: 50px;
+		    left: 25px;
+		    bottom: 0px;
+		    @media #{ $mobile } {
+		    	position: inherit;
+		    	border-left: none;
+		    }
+		}
+
+		> li{
+			&:before{
+				position: absolute;
+			    border-top: 2px solid #e8e8e8;
+			    content: "";
+			    width: 40px;
+			    top: 25px;
+			    left: -40px;
+			    @media #{ $tab } {
+					width: 15px;
+					left: -15px;
+			    }
+			     @media #{ $mobile } {
+			    	position: inherit;
+			    	border-top: none;
+			    }
+			}
+			&:last-child:after{
+				position: absolute;
+			    content: "";
+			    height: 100%;
+			    width: 16px;
+			    top: 27px;
+			    background: #f7f7f7;
+			    left: -43px;
+			    @media #{ $tab } {
+			    	left: -22px;
+			    }
+			    @media #{ $mobile } {
+			    	position: inherit;
+			    }
+			}
+		}
+	}
+} 

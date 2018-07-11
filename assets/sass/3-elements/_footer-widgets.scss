@@ -1,0 +1,156 @@
+.footer-widgets{
+	background-color: $headingTextColor;
+	padding: 100px 0; 
+
+	.widget{
+		margin-bottom: 60px;
+		&:last-child{
+			margin-bottom: 0;
+		}
+		h3.widget-title{
+			color: $liteColor;
+			font-size: 20px;
+			font-weight: 500;
+			padding-bottom: 15px;
+		}
+
+		ul{
+			list-style: none;
+			padding: 0;
+			margin: 0;
+			li{
+				padding-bottom: 10px;
+				&:last-child{
+					padding-bottom: 0;
+				}
+				a{
+					color: #ccc;
+					font-size: 15px;
+					display: block;
+				}
+
+				ul.children,
+				ul.sub-menu{
+					padding-left: 10px;
+					li{
+						&:first-child{
+						    padding-top: 10px;
+						}
+						&:last-child{
+							padding-bottom: 0;
+						}
+					}
+				}
+			}
+		}
+
+		span.su-email-title{
+			font-size: 30px;
+			line-height: 35px;
+			font-weight: 500;
+			color: $liteColor;
+			font-family: $secondaryFont;
+			padding-bottom: 15px;
+		}
+
+		.fluentform{
+			position: relative;
+			.ff-el-input--content{
+				input[type="email"]{
+					height: 50px;
+					padding:15px 20px;
+					border-radius: 2px;
+				}
+			}
+			.su-submit{
+				position: absolute;
+				content: "";
+				right: 0;
+			    top: 0;
+			    margin-bottom: 0;
+			}
+			.ff-btn{
+				position: relative;
+				text-indent: -99999999999px;
+    			white-space: nowrap;
+    			padding: 0;
+    			border: none;
+    			&:after{
+    				position: absolute;
+    				content: "\f178";
+    				font-family: "FontAwesome";
+    				right: 0;
+    				text-indent: 0;
+    				color: #fd7826;
+    				padding: 9px 20px;
+    				font-size: 20px;
+    			}
+			}
+			.ff-message-success{
+				color: $liteColor;
+			}
+			.ff-el-is-error .text-danger{
+				padding-top: 10px;
+			}
+		}
+
+		@media #{$mobile}{
+			padding-bottom: 30px;
+		}
+
+		ul li a span{
+			color: #fc5e11;
+		}
+		table > caption{
+			color: $liteColor;
+		}
+		table tr,
+		table td{
+			color: $liteColor;
+		}
+
+		&.widget_recent_entries ul li .comment-author-link, 
+		&.widget_recent_comments ul li .comment-author-link{
+			color: #fc5e11;
+		}
+		ul li span{
+			color: $liteColor;
+		}
+		.textwidget p,
+		cite,
+		.rssSummary{
+			color: $liteColor;
+		}
+
+
+		&.widget_inspirar_contact_widget{
+			p{
+				color: $liteColor;
+			}
+			ul{
+				margin: 0;
+				padding: 0;
+				list-style: none;
+				margin-bottom: 1.5em;
+				li{
+					display: block;
+					color: #ccc;
+					font-weight: 700;
+					a{
+						display: inline-block;
+						padding-left: 5px;
+					}
+				}
+			}
+			a.read-more{
+				position: relative;
+				&:after{
+					position: absolute;
+					content: "\f178";
+   					font-family: "FontAwesome";
+   					right: -25px;
+				}
+			}
+		}
+	}
+}

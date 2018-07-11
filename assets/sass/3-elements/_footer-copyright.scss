@@ -1,0 +1,32 @@
+.site-copyright{
+	padding: 40px 0;
+	background-color: #1c1c1c;
+	border-top: 1px solid #575757;
+	p{
+		color: #a9a9a9;
+		margin-bottom: 0;
+		font-size: 14px;
+		span{
+		   color: $liteColor;
+		   &:hover{
+		   	color: #a9a9a9;
+		   }
+		}
+		a{
+		   color: $liteColor;
+		   &:hover{
+		   	color: #a9a9a9;
+		   }
+		}
+	}
+	a{
+		color: #a9a9a9;
+		font-size: 14px;
+		span{
+			color: $liteColor;
+			&:hover{
+		   	color: #a9a9a9;
+		   }
+		}
+	}
+}

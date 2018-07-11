@@ -1,0 +1,66 @@
+/*============= universal css ================ */
+@font-face {
+    font-family: 'butlerbold';
+    src: url('../fonts/butler_bold-webfont.woff2') format('woff2'),
+         url('../fonts/butler_bold-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+body{
+  font: 100% $primaryFont;
+  font-size: 15px;
+  color: $bodyTextColor;
+  font-weight: 400;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased !important;
+  -moz-osx-font-smoothing: grayscale !important;
+  position: relative;
+}
+h1, h2, h3, h4, h5, h6 {
+  font-family: $secondaryFont;
+  color: $headingTextColor;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 10px;
+}
+a, a:hover, a:visited, a:focus{
+  text-decoration: none;
+  font-family: $primaryFont;
+  color: $primaryColor;
+}
+.pt-200{
+  padding-top: 200px !important;
+}
+.inspirar-site-padding{
+  padding: 100px 0;
+}
+.menu-transparent{
+  background: transparent !important;
+}
+/** plugin css fix **/
+.vbox-overlay{
+  z-index: 99999999;
+}
+.vbox-close{
+  top: 70px;
+  z-index: 99999999;
+}
+/******* admin bar css *******/
+.admin-bar .heading_nav_default {
+    top: 30px;
+}
+@media screen and (max-width: 782px) {
+  .admin-bar .heading_nav_default {
+    top: 46px;
+  }
+}
+@media screen and (min-width: 783px) {
+  .admin-bar .heading_nav_default {
+    top: 32px;
+  }
+}
+@media screen and (max-width: 600px){
+  .mobile {
+      position: fixed !important;
+  }
+}

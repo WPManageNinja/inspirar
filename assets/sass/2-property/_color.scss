@@ -1,0 +1,20 @@
+/* ============== color property css start  ================ */
+.bg-transparent{
+  background: transparent;
+  transition: all .4s ease;
+}
+.bg-white{
+  background: #ffffff;
+  transition: all .4s ease;
+}
+.bg-dark{
+  background: #111921;
+  transition: all .4s ease;
+}
+.bg-primary{
+  background: $primaryColor;
+  transition: all .4s ease;
+}
+.bg-light{
+  background: #fcfcfc;
+}

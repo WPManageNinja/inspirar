@@ -1,0 +1,134 @@
+.heading_nav_default{
+  display: table;
+  height: 80px;
+  width: 100%;
+  padding: 25px 0;
+  &.position-absolute{
+      top: 0;
+      z-index: 1030;
+  }
+  &.fixed-top.inspirar-bg-primary{
+    background-color: #fc5e11;
+  }
+  &.fixed-top,
+  &.bg-transparent{
+    background-color: transparent;
+  }
+  @media only screen and (max-width: 991px){
+    &.hide-on-tab {
+        display: none;
+    }
+  }
+.site-logo{
+   display: inline-block;
+   p{
+     margin: 0;
+   }
+   h1.site-title {
+      font-size: 44px;
+      margin-bottom: 0;
+      a{
+        margin-bottom: 0;
+        color: $liteColor;
+     }
+   }
+   p.site-description{
+    color: $liteColor;
+   }
+ }
+
+
+}
+
+ul.nav{
+ margin: 0;
+ padding: 0;
+ list-style: none;
+ text-align: center;
+ display: block;
+ li{
+   display: inline-block;
+   padding: 0 15px;
+   &:last-child{
+    padding-right: 0;
+   }
+   &.menu-item-has-children{
+    > a{
+      &:before{
+        position: absolute;
+        content: '\f107';
+        right: -12px;
+        font-family: "FontAwesome";
+      }
+    }
+   }
+   a{
+     color: $liteColor;
+     font-weight: 500;
+     font-size: 13px;
+     text-transform: uppercase;
+     background: transparent;
+     display: block;
+     position: relative;
+     padding-bottom: 5px;
+     margin-bottom: 10px;
+      
+     &:after{
+       position: absolute;
+       content: '';
+       width: 0;
+       height: 1px;
+       background-color: $liteColor;
+       bottom: 0;
+       left: 0;
+       opacity: 0;
+       @include transition(0.5s);
+     }
+     &:focus{
+       color: $liteColor;
+     }
+     &:hover{
+           background: transparent;
+           color: $liteColor;
+           &:after{
+             width: 100%;
+             opacity: 1;
+           }
+       }
+   }
+   &.active{
+     > a{
+       color: $liteColor;
+     }
+   }
+ }
+}
+
+/****** dropdown menu css ******/
+.main-navigation{
+  padding-left: 40px;
+  width: auto !important;
+  ul{
+    ul{
+      background-color: $liteColor;
+      li{
+        padding: 0;
+        &:hover > ul ,
+        &.focus > ul{
+          left: 0;
+        }
+      }
+      a{
+          width: 220px;
+          color: $headingTextColor;
+          padding: 15px 20px;
+          margin-bottom: 0;
+          border-bottom: 1px solid #d9dfe5;
+          text-align: left;
+          &:hover{
+            color: $headingTextColor;
+          }
+      }
+    }
+  }
+}

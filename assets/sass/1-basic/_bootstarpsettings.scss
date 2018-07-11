@@ -1,0 +1,8 @@
+/*======================= BootStarp settings  =========================*/
+button, .btn:focus, a:focus{
+  outline: none;
+}
+.form-control:focus{
+  box-shadow: none;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+}

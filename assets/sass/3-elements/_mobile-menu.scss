@@ -1,0 +1,55 @@
+.mean-container .mean-nav{
+    margin-top: 0;
+    .mobile-menu-logo{
+    	padding-left: 15px;
+	    padding-top: 10px;
+	    padding-bottom: 10px;
+    	h1{
+    		margin-bottom: 0;
+    		a{
+    			color: $liteColor;
+    		}
+    	}
+    	p{
+    		color: $liteColor;
+    		margin-bottom: 0
+    	}
+    }
+}
+.mean-container .mean-bar {
+	padding: 0;
+}
+.mean-container .mean-bar,
+.mean-container .mean-nav{
+	background: #fc5e11;
+}
+.mean-container .mean-nav ul li{
+	padding: 0;
+}
+.mean-container .mean-nav ul li a{
+	font-size: 13px;
+	padding: 0.7em 5%;
+}
+.mean-container a.meanmenu-reveal{
+	padding-top: 20px;
+}
+.mean-container .mean-nav ul li a.mean-expand{
+	height: 16px;
+	width: 19px;
+	background: transparent;
+	border-left: 1px solid rgba(219, 219, 219, 0.25) !important;
+    border-bottom: 1px solid rgba(219, 219, 219, 0.25) !important;
+    line-height: 19px;
+    &:last-child{
+		border-bottom: 0 !important;
+    }
+    &:hover{
+    	background-color: #d84500;
+    }
+}
+.mean-container .mean-nav ul li li a{
+	padding: 0.7em 10%;
+}
+.mean-container .mean-nav ul li li li a{
+	padding: 0.7em 15%;
+}
