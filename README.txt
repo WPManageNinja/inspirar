@@ -1,20 +1,17 @@
 === Inspirar ===
 Theme Name: Inspirar
-Theme URI: 
-Author: wpmanageninja
+Theme URI: https://github.com/WPManageNinja/inspirar
+Author: WPManageNinja
 Author URI: https://wpmanageninja.com/
-Tags: custom-background, custom-colors, custom-header, custom-menu, custom-logo, featured-images, flexible-header, full-width-template, one-column, right-sidebar, sticky-post, theme-options, translation-ready, two-columns, blog
+Tags: Blog, Custom Background, Custom Menu, E-Commerce, woocommerce-ready, Featured Images, Footer Widgets, Full Width Template, One Column, Sticky Post, Customizer Ready, Threaded Comments, Translation Ready, Two Columns
 Requires at least: 4.0
 Tested up to: 4.9.7
 Stable tag: 1.0.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Inspirar Responsive Multipurpose WordPress Theme, Copyright 2018 WpManageNinja
-Inspirar is distributed under the terms of the GNU General Public License v2 or later
-
 == Description ==
-Inspirar Responsive Multipurpose WordPress Theme
+Inspirar is a free multi-purpose WordPress theme. It's perfect for web agency business,corporate business,personal and parallax business portfolio, photography sites and freelancer. It's built built on BootStrap4 with responsive, clean, modern, flat and minimal design. Inspirar also is ecommerce (WooCommerce) Compatible, Retina-Ready, SEO Friendly. The Theme is very light-weight and You can speed up your site without any further work / plugin.
 
 == Installation ==
 
@@ -79,4 +76,4 @@ Inspirar bundles the following third-party resources:
 == Changelog ==
 
 Version 1.0.0
-1. Intial version Release
+1. Initial version Release
