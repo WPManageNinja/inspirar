@@ -30,47 +30,47 @@ class Inspirar_Contact_Widget extends WP_Widget{
     	$mobile = ( !empty( $instance['mobile'] ) ? $instance['mobile'] : '' );
     	$email = ( !empty( $instance['email'] ) ? $instance['email'] : '' );
         $show_btn = ( !empty( $instance['show_btn'] ) ? $instance['show_btn'] : '1' );
-        $btn_text = ( !empty( $instance['btn_text'] ) ? $instance['btn_text'] : 'View All' );
+        $btn_text = ( !empty( $instance['btn_text'] ) ? $instance['btn_text'] : __('View All', 'inspirar') );
         $btn_link = ( !empty( $instance['btn_link'] ) ? $instance['btn_link'] : '#' );
 
 ?>
     	<p>
-	        <label for="<?php echo esc_attr($this->get_field_id('title'));?>"><?php echo esc_html('Title:', 'inspirar');?></label>
+	        <label for="<?php echo esc_attr($this->get_field_id('title'));?>"><?php echo esc_html__('Title:', 'inspirar');?></label>
 	        <input type="text" class="widefat" id="<?php echo esc_attr($this->get_field_id('title'));?>" name="<?php echo esc_attr($this->get_field_name('title'));?>" value="<?php echo esc_attr( $title );?>">
         </p>
 
         <p>
 	        <label for="<?php echo esc_attr($this->get_field_id('address'));?>">
-			    <?php echo esc_html('Address:', 'inspirar');?>
+			    <?php echo esc_html__('Address:', 'inspirar');?>
 		    </label>
 	        <textarea class="widefat" id="<?php echo esc_attr( $this->get_field_id('address') );?>" name="<?php echo esc_attr( $this->get_field_name('address') );?>" cols="10" rows="10"><?php echo esc_textarea( $address );?></textarea>
         </p>
 
         <p>
-	        <label for="<?php echo esc_attr($this->get_field_id('tel'));?>"><?php echo esc_html('Tel:', 'inspirar');?></label>
+	        <label for="<?php echo esc_attr($this->get_field_id('tel'));?>"><?php echo esc_html__('Tel:', 'inspirar');?></label>
 	        <input type="text" class="widefat" id="<?php echo esc_attr($this->get_field_id('tel'));?>" name="<?php echo esc_attr($this->get_field_name('tel'));?>" value="<?php echo esc_attr( $tel );?>">
         </p>
 
         <p>
-            <label for="<?php echo esc_attr($this->get_field_id('mobile'));?>"><?php echo esc_html('Mobile:', 'inspirar');?></label>
+            <label for="<?php echo esc_attr($this->get_field_id('mobile'));?>"><?php echo esc_html__('Mobile:', 'inspirar');?></label>
             <input type="text" class="widefat" id="<?php echo esc_attr($this->get_field_id('mobile'));?>" name="<?php echo esc_attr($this->get_field_name('mobile'));?>" value="<?php echo esc_attr( $mobile );?>">
         </p>
 
         <p>
-            <label for="<?php echo esc_attr($this->get_field_id('email'));?>"><?php echo esc_html('Email:', 'inspirar');?></label>
+            <label for="<?php echo esc_attr($this->get_field_id('email'));?>"><?php echo esc_html__('Email:', 'inspirar');?></label>
             <input type="text" class="widefat" id="<?php echo esc_attr($this->get_field_id('email'));?>" name="<?php echo esc_attr($this->get_field_name('email'));?>" value="<?php echo esc_attr( $email );?>">
         </p>
 
         <p>
-            <label for="<?php echo esc_attr($this->get_field_id('btn_text'));?>"><?php echo esc_html('Button Text', 'inspirar');?></label>
+            <label for="<?php echo esc_attr($this->get_field_id('btn_text'));?>"><?php echo esc_html__('Button Text', 'inspirar');?></label>
             <input type="text" class="widefat" id="<?php echo esc_attr($this->get_field_id('btn_text'));?>" name="<?php echo esc_attr($this->get_field_name('btn_text'));?>" value="<?php echo esc_attr( $btn_text );?>">
         </p>
         <p>
-            <label for="<?php echo esc_attr($this->get_field_id('btn_link'));?>"><?php echo esc_html('Button Link', 'inspirar');?></label>
+            <label for="<?php echo esc_attr($this->get_field_id('btn_link'));?>"><?php echo esc_html__('Button Link', 'inspirar');?></label>
             <input type="text" class="widefat" id="<?php echo esc_attr($this->get_field_id('btn_link'));?>" name="<?php echo esc_attr($this->get_field_name('btn_link'));?>" value="<?php echo esc_attr( $btn_link );?>">
         </p>
         <p>
-            <label for="<?php echo esc_attr($this->get_field_id('show_btn'));?>"><?php echo esc_html('Show Button?', 'inspirar');?></label>
+            <label for="<?php echo esc_attr($this->get_field_id('show_btn'));?>"><?php echo esc_html__('Show Button?', 'inspirar');?></label>
             <input <?php checked($show_btn, '1'); ?> type="checkbox" id="<?php echo esc_attr($this->get_field_id('show_btn'));?>" name="<?php echo esc_attr($this->get_field_name('show_btn'));?>" value="1">
         </p>
 

@@ -37,7 +37,7 @@ if ( ! function_exists( 'inspirar_setup' ) ) :
 
 
 		// This theme styles the visual editor with editor-style.css to match the theme style.
-		add_editor_style();
+		// add_editor_style();
 
 		/*
 		 * Enable support for Post Thumbnails on posts and pages.
@@ -159,8 +159,8 @@ function inspirar_fonts_url(){
 	}
 	 
 	$query_args = array(
-	'family' => urlencode( implode( '|', $font_families ) ),
-	'subset' => urlencode( 'latin,latin-ext' ),	
+	'family' => rawurlencode( implode( '|', $font_families ) ),
+	'subset' => rawurlencode( 'latin,latin-ext' ),	
 	);
 	 
 	$fonts_url = add_query_arg( $query_args, 'https://fonts.googleapis.com/css' );
@@ -181,16 +181,21 @@ function inspirar_scripts() {
 	wp_enqueue_style( 'inspirar-default', get_template_directory_uri() . '/assets/css/default.css', array(), '1.0.0' );
 	wp_enqueue_style( 'meanmenu', get_template_directory_uri() . '/assets/css/meanmenu.min.css', array(), '2.0.7');
 	wp_enqueue_style( 'inspirar-main', get_template_directory_uri() . '/assets/css/main.css', array(), '1.0.0' );
-	wp_enqueue_style( 'inspirar-style', get_stylesheet_uri() );
-
+	
 	wp_enqueue_script( 'bootstrap', get_template_directory_uri() . '/assets/js/bootstrap.min.js', array('jquery'), '20151215', true );
+	
 	wp_enqueue_script( 'popper', get_template_directory_uri() . '/assets/js/popper.min.js', array('jquery'), '20151215', true );
+	
 	wp_enqueue_script( 'meanmenu', get_template_directory_uri() . '/assets/js/jquery.meanmenu.min.js', array('jquery'), '20151215', true );
+	
 	wp_enqueue_script( 'inspirar-navigation-jquery', get_template_directory_uri() . '/assets/js/inspirar-navigation-jquery.js', array('jquery'), '20151215', true );
 
 	wp_enqueue_script( 'inspirar-skip-link-focus-fix-jquery', get_template_directory_uri() . '/assets/js/inspirar-skip-link-focus-fix-jquery.js', array('jquery'), '20151215', true );
+	
 	wp_enqueue_script( 'inspirar-main-jquery', get_template_directory_uri() . '/assets/js/inspirar-main-jquery.js', array('jquery'), '20151215', true );
 
+	wp_enqueue_style( 'inspirar-style', get_stylesheet_uri() );
+	
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
@@ -255,7 +260,7 @@ function inspirar_blog_search_widget(){
 			<form role="search" method="get" id="searchform" class="searchform" action="' . esc_url(home_url( '/' )) . '" >
 				
 			    <input type="search" value="' . get_search_query() . '" name="s" class="search-field form-control"  placeholder="' . esc_attr__('Search' , 'inspirar') .'">
-			    <label class="d-none">'.esc_html('Search for', 'inspirar').':</label>
+			    <label class="d-none">'.esc_html__('Search for', 'inspirar').':</label>
 
 			    <button type="submit" class="search-submit"><i class="fa fa-search" aria-hidden="true"></i></button>
 			</form>

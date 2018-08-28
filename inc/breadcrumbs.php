@@ -20,7 +20,7 @@ function inspirar_breadcrumbs($align = 'right') {
     $class       = implode(' ', $class);
  
     global $post;
-    $homeLink = home_url('/');
+    $homeLink = esc_url(home_url('/'));
 
     if (is_home() || is_front_page()) {
         if ($showOnHome == 1) {
@@ -35,17 +35,16 @@ function inspirar_breadcrumbs($align = 'right') {
             if ($thisCat->parent != 0) {
                 $output[] = get_category_parents($thisCat->parent, TRUE, ' ') . '';
             }
-            $output[] = $before . esc_html__('Category', 'inspirar') . ': ' . esc_html(single_cat_title('', false)) . '' . $after;
-
+            $output[] = $before . esc_html__('Category', 'inspirar') . ': ' . esc_html(get_the_archive_title()) . '' . $after;
         } elseif ( is_search() ) {
             $output[] = $before . esc_html__('Search', 'inspirar') . $after;
         } elseif ( is_day() ) {
-            $output[] = '<li><a href="' . esc_url(get_year_link(get_the_time('Y'))) . '">' . esc_html(get_the_time('Y')) . '</a><span class="separator">' . esc_html($delimiter) . '</span></li>';
-            $output[] = '<li><a href="' . esc_url(get_month_link(get_the_time('Y'),get_the_time('m'))) . '">' . esc_html(get_the_time('F')) . '</a><span class="separator">' . esc_html($delimiter) . '</span></li>';
-            $output[] = $before . get_the_time('d') . $after;
+            $output[] = '<li><a href="' . esc_url(get_year_link(esc_attr(get_the_time('Y')))) . '">' . esc_html(get_the_time('Y')) . '</a><span class="separator">' . esc_html($delimiter) . '</span></li>';
+            $output[] = '<li><a href="' . esc_url(get_month_link(esc_attr(get_the_time('Y')), esc_attr(get_the_time('m')))) . '">' . esc_html(get_the_time('F')) . '</a><span class="separator">' . esc_html($delimiter) . '</span></li>';
+            $output[] = $before . esc_attr(get_the_time('d')) . $after;
 
         } elseif ( is_month() ) {
-            $output[] = '<li><a href="' . esc_url(get_year_link(get_the_time('Y'))) . '">' . esc_html(get_the_time('Y')) . '</a><span class="separator">' . esc_html($delimiter) . '</span></li>';
+            $output[] = '<li><a href="' . esc_url(get_year_link(esc_attr(get_the_time('Y')))) . '">' . esc_html(get_the_time('Y')) . '</a><span class="separator">' . esc_html($delimiter) . '</span></li>';
             $output[] = $before . esc_html(get_the_time('F')) . $after;
 
         } elseif ( is_year() ) {
@@ -92,7 +91,7 @@ function inspirar_breadcrumbs($align = 'right') {
             if ($showCurrent == 1) $output[] = '<span class="separator">' . esc_html($delimiter) . '</span> '.$before . esc_html(get_the_title()) . $after;
 
         } elseif ( is_tag() ) {
-            $output[] = $before . esc_html__('Tag', 'inspirar') . ': ' . esc_html(single_tag_title('', false)) . $after;
+            $output[] = $before . esc_html__('Tag', 'inspirar') . ': ' . esc_html(get_the_archive_title()) . $after;
         } elseif ( is_author() ) {
             global $author;
             $userdata = get_userdata($author);
