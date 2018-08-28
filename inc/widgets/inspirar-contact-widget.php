@@ -111,7 +111,7 @@ class Inspirar_Contact_Widget extends WP_Widget{
 	    echo wp_kses($args['before_widget'], $allowed_tags);
 
 	    if( !empty( $instance['title'] )){
-		     echo wp_kses($args['before_title'], $allowed_tags) . esc_html(apply_filters('widget_title', $instance['title'])) . wp_kses($args['after_title'], $allowed_tags);
+		     echo wp_kses($args['before_title'], $allowed_tags) . esc_html(apply_filters('widget_title', $instance['title'], $instance, $this->id_base)) . wp_kses($args['after_title'], $allowed_tags);
 	    }
         if( $instance['address'] ){
             echo '<p>' . esc_html($instance['address']) . '</p>';

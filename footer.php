@@ -72,13 +72,13 @@
 				   	 } else { ?>
 					<?php
 						/* translators: 1: Theme year, 2: Theme name. */
-						printf( esc_html__( 'Copyright &copy; %1$s by %2$s.', 'inspirar' ), '2018', '<span>Inspirar</span>' );
+						printf( esc_html__( 'Copyright &copy; %1$s by %2$s.', 'inspirar' ), get_bloginfo('sitename'), date('Y') );
 					?>
+                       Inspirar Theme By <a href="https://wpmanageninja.com">WPManageNinja.com</a>
 					</p>
 
 					<a href="<?php echo esc_url( 'https://wordpress.org/' ); ?>">
 						<?php
-						/* translators: %s: CMS name, i.e. WordPress. */
 						printf( esc_html__( 'Proudly powered by %s', 'inspirar' ), '<span>WordPress</span>' );
 						?>
 					</a>

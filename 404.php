@@ -44,9 +44,8 @@ get_header();
 
 						<?php
 						/* translators: %1$s: smiley */
-						$inspirar_archive_content = '<p>' . sprintf( esc_html__( 'Try looking in the monthly archives. %1$s', 'inspirar' ), convert_smilies( ':)' ) ) . '</p>';
-						the_widget( 'WP_Widget_Archives', 'dropdown=1', "after_title=</h2>$inspirar_archive_content" );
-
+						the_widget( 'WP_Widget_Archives');
+                        
 						the_widget( 'WP_Widget_Tag_Cloud' );
 						?>
 				</div><!-- .page-content -->
