@@ -11,8 +11,15 @@
  $inspirar_widgets_section_visiblity = get_theme_mod('inspirar_widgets_section_visiblity', true);
  $inspirar_footer_widgets_columns = get_theme_mod('inspirar_footer_widgets_section_columns', 4);
  $inspirar_copyright_section_visiblity = get_theme_mod('inspirar_copyright_section_visiblity', true);
- $inspirar_copyright_section_text_alignment = get_theme_mod('inspirar_copyright_section_text_alignment', 'text-center');
- $copyright_text = get_theme_mod('inspirar_copyright_text');
+ $inspirar_copyright_section_text_alignment = get_theme_mod('inspirar_copyright_section_text_alignment');
+ $inspirar_copyright_section_columns = get_theme_mod('inspirar_copyright_section_columns', 12);
+ $inspirar_copyright_section_content_c_one = get_theme_mod('inspirar_copyright_section_content_c_one', 'text');
+ $inspirar_copyright_section_content_c_two = get_theme_mod('inspirar_copyright_section_content_c_two', 'widget');
+ $inspirar_copyright_section_content_c_three = get_theme_mod('inspirar_copyright_section_content_c_three', 'menu');
+
+ $inspirar_cloumn_one_custom_text = get_theme_mod('inspirar_cloumn_one_custom_text');
+ $inspirar_cloumn_two_custom_text = get_theme_mod('inspirar_cloumn_two_custom_text');
+ $inspirar_cloumn_three_custom_text = get_theme_mod('inspirar_cloumn_three_custom_text');
 
  switch ($inspirar_footer_widgets_columns) {
  	case '1':
@@ -51,39 +58,64 @@
 		<?php } ?>
 
 		<?php if($inspirar_copyright_section_visiblity) { ?>
-		<div class="site-copyright <?php echo esc_attr($inspirar_copyright_section_text_alignment); ?>">
+		<div class="site-copyright">
 			<div class="container">
 				<div class="row">
-					<div class="col-md-12">
-				   <p>
-				   	<?php 
-				   	if( $copyright_text ) { 
-						$allowed_tags = array(
-					        'a' => array(
-					          'href' => array(),
-					          'title' => array()
-					        ),
-					        'br' => array(),
-					        'span' => array(),
-					        'em' => array(),
-					        'strong' => array()
-					    );
-						echo wp_kses( $copyright_text, $allowed_tags);
-				   	 } else { ?>
-					<?php
-						/* translators: 1: Theme year, 2: Theme name. */
-						printf( esc_html__( 'Copyright &copy; %1$s by %2$s.', 'inspirar' ), get_bloginfo('sitename'), date('Y') );
-					?>
-                       Inspirar Theme By <a href="https://wpmanageninja.com">WPManageNinja.com</a>
-					</p>
+					<div class="col-md-<?php echo esc_attr($inspirar_copyright_section_columns); ?> <?php echo esc_attr($inspirar_copyright_section_text_alignment); ?>">
 
-					<a href="<?php echo esc_url( 'https://wordpress.org/' ); ?>">
-						<?php
-						printf( esc_html__( 'Proudly powered by %s', 'inspirar' ), '<span>WordPress</span>' );
-						?>
-					</a>
-					<?php } ?>
+							<?php 
+								if( $inspirar_copyright_section_content_c_one === 'widget' ) { 
+									inspirar_footer_copyright_widget();
+								}
+
+								if( $inspirar_copyright_section_content_c_one === 'text' ) { 
+									inspirar_footer_copyright_custom_text($inspirar_cloumn_one_custom_text);
+								}
+
+								if( $inspirar_copyright_section_content_c_one === 'menu' ) { 
+									footer_copyright_menu();
+								}
+							?>
+
 					</div>
+
+					<?php if($inspirar_copyright_section_columns !== '12' ) { ?>
+					<div class="col-md-<?php echo esc_attr($inspirar_copyright_section_columns); ?>">
+						<?php 
+							if( $inspirar_copyright_section_content_c_two === 'widget' ) { 
+								inspirar_footer_copyright_widget();
+							}
+
+							if( $inspirar_copyright_section_content_c_two === 'text' ) { 
+								inspirar_footer_copyright_custom_text($inspirar_cloumn_two_custom_text);
+							}
+
+							if( $inspirar_copyright_section_content_c_two === 'menu' ) { 
+								footer_copyright_menu();
+							}
+						?>
+
+					</div>
+					<?php } ?>
+
+					<?php if($inspirar_copyright_section_columns == '4' ) { ?>
+					<div class="col-md-<?php echo esc_attr($inspirar_copyright_section_columns); ?> text-right">
+						<?php 
+							if( $inspirar_copyright_section_content_c_three === 'widget' ) { 
+								inspirar_footer_copyright_widget();
+							}
+
+							if( $inspirar_copyright_section_content_c_three === 'text' ) { 
+								inspirar_footer_copyright_custom_text($inspirar_cloumn_three_custom_text);
+							}
+
+							if( $inspirar_copyright_section_content_c_three === 'menu' ) { 
+								footer_copyright_menu();
+							}
+						?>
+					</div>
+					<?php } ?>
+		
 				</div>
 			</div>
 		</div><!-- .site-copyright -->

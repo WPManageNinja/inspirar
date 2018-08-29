@@ -37,7 +37,7 @@ if ( ! function_exists( 'inspirar_setup' ) ) :
 
 
 		// This theme styles the visual editor with editor-style.css to match the theme style.
-		// add_editor_style();
+		add_editor_style();
 
 		/*
 		 * Enable support for Post Thumbnails on posts and pages.
@@ -48,7 +48,8 @@ if ( ! function_exists( 'inspirar_setup' ) ) :
 
 		// This theme uses wp_nav_menu() in one location.
 		register_nav_menus( array(
-			'menu-default' => esc_html__( 'Primary', 'inspirar' ),
+			'menu-default' => esc_html__( 'Primary Menu', 'inspirar' ),
+			'menu-footer' => esc_html__( 'Footer Menu', 'inspirar' ),
 		) );
 
 		/*
@@ -83,10 +84,7 @@ if ( ! function_exists( 'inspirar_setup' ) ) :
 			'flex-width'  => true,
 			'flex-height' => true,
 		) );
-
-        add_theme_support( 'woocommerce' );
-        
-    }
+	}
 endif;
 add_action( 'after_setup_theme', 'inspirar_setup' );
 
@@ -121,6 +119,16 @@ function inspirar_widgets_init() {
 		'after_title'   => '</h3>',
 	) );
 
+	register_sidebar( array(
+		'name'          => esc_html__( 'Copyright Widgets', 'inspirar' ),
+		'id'            => 'inspirar-copyright-widgets',
+		'description'   => esc_html__( 'Add widgets here.', 'inspirar' ),
+		'before_widget' => '<div id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</div>',
+		'before_title'  => '<h3 class="widget-title">',
+		'after_title'   => '</h3>',
+	) );
+
 
 	// Footer widget
  	$inspirar_footer_widgets_section_columns = get_theme_mod('inspirar_footer_widgets_section_columns', 4);
@@ -135,6 +143,8 @@ function inspirar_widgets_init() {
 			'after_title'   => '</h3>',
 		) );
     }
+
+
 }
 add_action( 'widgets_init', 'inspirar_widgets_init' );
 
@@ -181,21 +191,16 @@ function inspirar_scripts() {
 	wp_enqueue_style( 'inspirar-default', get_template_directory_uri() . '/assets/css/default.css', array(), '1.0.0' );
 	wp_enqueue_style( 'meanmenu', get_template_directory_uri() . '/assets/css/meanmenu.min.css', array(), '2.0.7');
 	wp_enqueue_style( 'inspirar-main', get_template_directory_uri() . '/assets/css/main.css', array(), '1.0.0' );
-	
+	wp_enqueue_style( 'inspirar-style', get_stylesheet_uri() );
+
 	wp_enqueue_script( 'bootstrap', get_template_directory_uri() . '/assets/js/bootstrap.min.js', array('jquery'), '20151215', true );
-	
 	wp_enqueue_script( 'popper', get_template_directory_uri() . '/assets/js/popper.min.js', array('jquery'), '20151215', true );
-	
-	wp_enqueue_script( 'meanmenu', get_template_directory_uri() . '/assets/js/jquery.meanmenu.min.js', array('jquery'), '20151215', true );
-	
+	wp_enqueue_script( 'meanmenu', get_template_directory_uri() . '/assets/js/jquery.meanmenu.js', array('jquery'), '20151215', true );
 	wp_enqueue_script( 'inspirar-navigation-jquery', get_template_directory_uri() . '/assets/js/inspirar-navigation-jquery.js', array('jquery'), '20151215', true );
 
 	wp_enqueue_script( 'inspirar-skip-link-focus-fix-jquery', get_template_directory_uri() . '/assets/js/inspirar-skip-link-focus-fix-jquery.js', array('jquery'), '20151215', true );
-	
 	wp_enqueue_script( 'inspirar-main-jquery', get_template_directory_uri() . '/assets/js/inspirar-main-jquery.js', array('jquery'), '20151215', true );
 
-	wp_enqueue_style( 'inspirar-style', get_stylesheet_uri() );
-	
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
@@ -238,6 +243,8 @@ require get_template_directory() . '/inc/global-functions.php';
  * Load theme custom widgets
  */
 require get_template_directory() . '/inc/widgets/inspirar-contact-widget.php';
+require get_template_directory() . '/inc/widgets/inspirar-social-widget.php';
+
 
 /**
  * Modify excerpt length

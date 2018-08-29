@@ -253,16 +253,15 @@ if( !function_exists('inspirar_related_posts') ){
 
 
 
-if( !function_exists('footer_copyright_widget') ){
-	function footer_copyright_widget(){
+if( !function_exists( 'inspirar_footer_copyright_widget' ) ){
+	function inspirar_footer_copyright_widget(){
 		dynamic_sidebar( 'inspirar-copyright-widgets');
 	}
 }
 
-if( !function_exists('footer_copyright_custom_text') ){
-	function footer_copyright_custom_text( $custom_text ){
+if( !function_exists( 'inspirar_footer_copyright_custom_text' ) ){
+	function inspirar_footer_copyright_custom_text( $custom_text ){
 	?>
-		<p>
 	   	<?php 
 	   	if( $custom_text ) { 
 			$allowed_tags = array(
@@ -277,18 +276,23 @@ if( !function_exists('footer_copyright_custom_text') ){
 		    );
 			echo wp_kses( $custom_text, $allowed_tags);
 	   	 } else { ?>
-		<?php
-			/* translators: 1: Theme year, 2: Theme name. */
-			printf( esc_html__( 'Copyright &copy; %1$s by %2$s.', 'inspirar' ), '2018', '<span>Inspirar</span>' );
-		?>
-		</p>
+            <p>
+                <?php
+                /* translators: 1: Theme year, 2: Theme name. */
+                printf( esc_html__( 'Copyright &copy; %1$s.', 'inspirar' ), '<span>'.get_bloginfo('site_title').'</span>' );
+                ?>
 
-		<a href="<?php echo esc_url( 'https://wordpress.org/' ); ?>">
-			<?php
-			/* translators: %s: CMS name, i.e. WordPress. */
-			printf( esc_html__( 'Proudly powered by %s', 'inspirar' ), '<span>WordPress</span>' );
-			?>
-		</a>
+                <?php
+                /* translators: 1: Theme year, 2: Theme name. */
+                printf( esc_html__( 'Inspirar Theme By %1$s.', 'inspirar' ), '<a href="https://wpmanageninja.com">WPManageNinja.com</a>' );
+                ?>
+            </p>
+            <a href="<?php echo esc_url( 'https://wordpress.org/' ); ?>">
+		            <?php
+		            /* translators: %s: CMS name, i.e. WordPress. */
+		            printf( esc_html__( 'Proudly powered by %s', 'inspirar' ), '<span>WordPress</span>' );
+		            ?>
+                </a>
 		<?php } 
 	}
 }
@@ -304,28 +308,30 @@ if( !function_exists('footer_copyright_menu') ){
 	}
 }
 // Pagination
-function inspirar_pagination( $numpages = ''){
-    if ($numpages == '') {
-	    global $wp_query;
-	    $numpages = $wp_query->max_num_pages;
-	    if(!$numpages) {
-	        $numpages = 1;
-	    }
+if( !function_exists('inspirar_pagination') ) {
+	function inspirar_pagination( $numpages = '' ) {
+		if ( $numpages == '' ) {
+			global $wp_query;
+			$numpages = $wp_query->max_num_pages;
+			if ( ! $numpages ) {
+				$numpages = 1;
+			}
+		}
+
+		$big = 999999999; // need an unlikely integer
+		echo get_the_posts_pagination( array(
+			'base'      => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
+			'format'    => '',
+			'add_args'  => '',
+			'current'   => max( 1, get_query_var( 'paged' ) ),
+			'total'     => $numpages,
+			'prev_text' => '<i class="fa fa-angle-left" aria-hidden="true"></i>',
+			'next_text' => '<i class="fa fa-angle-right" aria-hidden="true"></i>',
+			'type'      => 'list',
+			'end_size'  => 2,
+			'mid_size'  => 2
+		) );
 	}
-        
-  $big = 999999999; // need an unlikely integer
-  echo paginate_links( array(
-      'base' => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
-      'format'       => '',
-      'add_args'     => '',
-      'current'      => max( 1, get_query_var( 'paged' ) ),
-      'total'        => $numpages,
-      'prev_text'    => '<i class="fa fa-angle-left" aria-hidden="true"></i>',
-      'next_text'    => '<i class="fa fa-angle-right" aria-hidden="true"></i>',
-      'type'         => 'list',
-      'end_size'     => 2,
-      'mid_size'     => 2
-    ) );
 }
 
 
@@ -352,7 +358,7 @@ if( !function_exists('inspirar_breadcrumbs') ){
 		$class       = implode(' ', $class);
 
 		global $post;
-		$homeLink = home_url('/');
+		$homeLink = esc_url(home_url('/'));
 
 		if (is_home() || is_front_page()) {
 			if ($showOnHome == 1) {
@@ -367,17 +373,17 @@ if( !function_exists('inspirar_breadcrumbs') ){
 				if ($thisCat->parent != 0) {
 					$output[] = get_category_parents($thisCat->parent, TRUE, ' ') . '';
 				}
-				$output[] = $before . esc_html__('Category', 'inspirar') . ': ' . esc_html(single_cat_title('', false)) . '' . $after;
+				$output[] = $before . esc_html__('Category', 'inspirar') . ': ' . esc_html(get_the_archive_title()) . '' . $after;
 
 			} elseif ( is_search() ) {
 				$output[] = $before . esc_html__('Search', 'inspirar') . $after;
 			} elseif ( is_day() ) {
-				$output[] = '<li><a href="' . esc_url(get_year_link(get_the_time('Y'))) . '">' . esc_html(get_the_time('Y')) . '</a><span class="separator">' . esc_html($delimiter) . '</span></li>';
-				$output[] = '<li><a href="' . esc_url(get_month_link(get_the_time('Y'),get_the_time('m'))) . '">' . esc_html(get_the_time('F')) . '</a><span class="separator">' . esc_html($delimiter) . '</span></li>';
-				$output[] = $before . get_the_time('d') . $after;
+				$output[] = '<li><a href="' . esc_url(get_year_link(esc_html(get_the_time('Y')))) . '">' . esc_html(get_the_time('Y')) . '</a><span class="separator">' . esc_html($delimiter) . '</span></li>';
+				$output[] = '<li><a href="' . esc_url(get_month_link(esc_html(get_the_time('Y')),esc_html(get_the_time('m')))) . '">' . esc_html(get_the_time('F')) . '</a><span class="separator">' . esc_html($delimiter) . '</span></li>';
+				$output[] = $before . esc_html(get_the_time('d')) . $after;
 
 			} elseif ( is_month() ) {
-				$output[] = '<li><a href="' . esc_url(get_year_link(get_the_time('Y'))) . '">' . esc_html(get_the_time('Y')) . '</a><span class="separator">' . esc_html($delimiter) . '</span></li>';
+				$output[] = '<li><a href="' . esc_url(get_year_link(esc_html(get_the_time('Y')))) . '">' . esc_html(get_the_time('Y')) . '</a><span class="separator">' . esc_html($delimiter) . '</span></li>';
 				$output[] = $before . esc_html(get_the_time('F')) . $after;
 
 			} elseif ( is_year() ) {
@@ -424,7 +430,7 @@ if( !function_exists('inspirar_breadcrumbs') ){
 				if ($showCurrent == 1) $output[] = '<span class="separator">' . esc_html($delimiter) . '</span> '.$before . esc_html(get_the_title()) . $after;
 
 			} elseif ( is_tag() ) {
-				$output[] = $before . esc_html__('Tag', 'inspirar') . ': ' . esc_html(single_tag_title('', false)) . $after;
+				$output[] = $before . esc_html__('Tag', 'inspirar') . ': ' . esc_html(get_the_archive_title()) . $after;
 			} elseif ( is_author() ) {
 				global $author;
 				$userdata = get_userdata($author);

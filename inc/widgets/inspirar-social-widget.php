@@ -33,61 +33,61 @@ class Inspirar_Social_Widget extends WP_Widget{
 ?>
     	<p>
 	        <label for="<?php echo esc_attr($this->get_field_id('title'));?>">
-			    <?php echo esc_html('Title:', 'inspirar');?>
+			    <?php echo esc_html__('Title:', 'inspirar');?>
 		    </label>
 	        <input type="text" class="widefat" id="<?php echo esc_attr( $this->get_field_id('title') );?>" name="<?php echo esc_attr( $this->get_field_name('title') );?>" value="<?php echo esc_attr( $title );?>">
         </p>
 
 		<p>
 			<label for="<?php echo esc_attr($this->get_field_id('google_link'));?>">
-				<?php echo esc_html('Google Link', 'inspirar');?>
+				<?php echo esc_html__('Google Link', 'inspirar');?>
 			</label>
 			<input type="text" class="widefat" id="<?php echo esc_attr( $this->get_field_id('google_link') );?>" name="<?php echo esc_attr( $this->get_field_name('google_link') );?>" value="<?php echo esc_attr( $google_link );?>">
 		</p>
 
         <p>
             <label for="<?php echo esc_attr($this->get_field_id('facebook_link'));?>">
-	            <?php echo esc_html('Facebook Link', 'inspirar');?>
+	            <?php echo esc_html__('Facebook Link', 'inspirar');?>
             </label>
             <input type="text" class="widefat" id="<?php echo esc_attr( $this->get_field_id('facebook_link') );?>" name="<?php echo esc_attr( $this->get_field_name('facebook_link') );?>" value="<?php echo esc_attr( $facebook_link );?>">
         </p>
 
 		<p>
 			<label for="<?php echo esc_attr($this->get_field_id('twitter_link'));?>">
-				<?php echo esc_html('Twitter Link', 'inspirar');?>
+				<?php echo esc_html__('Twitter Link', 'inspirar');?>
 			</label>
 			<input type="text" class="widefat" id="<?php echo esc_attr( $this->get_field_id('twitter_link') );?>" name="<?php echo esc_attr( $this->get_field_name('twitter_link') );?>" value="<?php echo esc_attr( $twitter_link );?>">
 		</p>
 
 		<p>
 			<label for="<?php echo esc_attr($this->get_field_id('linkedin_link'));?>">
-				<?php echo esc_html('Linkedin Link', 'inspirar');?>
+				<?php echo esc_html__('Linkedin Link', 'inspirar');?>
 			</label>
 			<input type="text" class="widefat" id="<?php echo esc_attr( $this->get_field_id('linkedin_link') );?>" name="<?php echo esc_attr( $this->get_field_name('linkedin_link') );?>" value="<?php echo esc_attr( $linkedin_link );?>">
 		</p>
 		<p>
 			<label for="<?php echo esc_attr($this->get_field_id('youtube_link'));?>">
-				<?php echo esc_html('Youtube Link', 'inspirar');?>
+				<?php echo esc_html__('Youtube Link', 'inspirar');?>
 			</label>
 			<input type="text" class="widefat" id="<?php echo esc_attr( $this->get_field_id('youtube_link') );?>" name="<?php echo esc_attr( $this->get_field_name('youtube_link') );?>" value="<?php echo esc_attr( $youtube_link );?>">
 		</p>
 
 		<p>
 			<label for="<?php echo esc_attr($this->get_field_id('google_plus_link'));?>">
-				<?php echo esc_html('Google Plus Link', 'inspirar');?>
+				<?php echo esc_html__('Google Plus Link', 'inspirar');?>
 			</label>
 			<input type="text" class="widefat" id="<?php echo esc_attr( $this->get_field_id('google_plus_link') );?>" name="<?php echo esc_attr( $this->get_field_name('google_plus_link') );?>" value="<?php echo esc_attr( $google_plus_link );?>">
 		</p>
 		<p>
 			<label for="<?php echo esc_attr($this->get_field_id('instagram_link'));?>">
-				<?php echo esc_html('Instagram Link', 'inspirar');?>
+				<?php echo esc_html__('Instagram Link', 'inspirar');?>
 			</label>
 			<input type="text" class="widefat" id="<?php echo esc_attr( $this->get_field_id('instagram_link') );?>" name="<?php echo esc_attr( $this->get_field_name('instagram_link') );?>" value="<?php echo esc_attr( $instagram_link );?>">
 		</p>
 
 		<p>
 			<label for="<?php echo esc_attr($this->get_field_id('pinterest_link'));?>">
-				<?php echo esc_html('Pinterest Link', 'inspirar');?>
+				<?php echo esc_html__('Pinterest Link', 'inspirar');?>
 			</label>
 			<input type="text" class="widefat" id="<?php echo esc_attr( $this->get_field_id('pinterest_link') );?>" name="<?php echo esc_attr( $this->get_field_name('pinterest_link') );?>" value="<?php echo esc_attr( $pinterest_link );?>">
 		</p>
@@ -95,14 +95,14 @@ class Inspirar_Social_Widget extends WP_Widget{
 
 		<p>
 			<label for="<?php echo esc_attr($this->get_field_id('flickr_link'));?>">
-				<?php echo esc_html('Flickr Link', 'inspirar');?>
+				<?php echo esc_html__('Flickr Link', 'inspirar');?>
 			</label>
 			<input type="text" class="widefat" id="<?php echo esc_attr( $this->get_field_id('flickr_link') );?>" name="<?php echo esc_attr( $this->get_field_name('flickr_link') );?>" value="<?php echo esc_attr( $flickr_link );?>">
 		</p>
 
 		<p>
 			<label for="<?php echo esc_attr($this->get_field_id('rss_link'));?>">
-				<?php echo esc_html('Rss Link', 'inspirar');?>
+				<?php echo esc_html__('Rss Link', 'inspirar');?>
 			</label>
 			<input type="text" class="widefat" id="<?php echo esc_attr( $this->get_field_id('rss_link') );?>" name="<?php echo esc_attr( $this->get_field_name('rss_link') );?>" value="<?php echo esc_attr( $rss_link );?>">
 		</p>
@@ -142,7 +142,7 @@ class Inspirar_Social_Widget extends WP_Widget{
 	    echo wp_kses($args['before_widget'], $allowed_tags);
 
 	    if( !empty( $instance['title'] )){
-		    echo $args['before_title'] . apply_filters('widget_title', $instance['title']) . $args['after_title'];
+		    echo $args['before_title'] . apply_filters('widget_title', $instance['title'], $instance, $this->id_base) . $args['after_title'];
 	    }
 
        echo '<div class="footer-social-links"><nav class="footer-social-nav">';
