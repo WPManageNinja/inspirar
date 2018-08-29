@@ -2,7 +2,7 @@ jQuery(document).ready( function($) {
 	'use strict';
 
 	// main menu background color change
-    var navBg = $('.agency-menu');
+    var navBg = $('.agency-menu, .lawyer-menu');
   	$(window).scroll(function () {
         if ($(window).scrollTop() > 115) {
             navBg.addClass('inspirar-bg-primary')

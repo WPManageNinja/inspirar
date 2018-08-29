@@ -73,6 +73,10 @@ h1, h2, h3, h4, h5, h6 {
   margin-bottom: 10px;
 }
 
+h1 a, h1 a:hover, h1 a:visited, h1 a:focus, h2 a, h2 a:hover, h2 a:visited, h2 a:focus, h3 a, h3 a:hover, h3 a:visited, h3 a:focus, h4 a, h4 a:hover, h4 a:visited, h4 a:focus, h5 a, h5 a:hover, h5 a:visited, h5 a:focus, h6 a, h6 a:hover, h6 a:visited, h6 a:focus {
+  font-family: "butlerbold", sans-serif;
+}
+
 a, a:hover, a:visited, a:focus {
   text-decoration: none;
   font-family: "Poppins", sans-serif;
@@ -186,6 +190,8 @@ button, .btn:focus, a:focus {
   height: 80px;
   width: 100%;
   padding: 25px 0;
+  -webkit-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
 }
 
 .heading_nav_default.position-absolute {
@@ -195,6 +201,13 @@ button, .btn:focus, a:focus {
 
 .heading_nav_default.fixed-top.inspirar-bg-primary {
   background-color: #fc5e11;
+  padding: 10px 0;
+}
+
+.heading_nav_default.fixed-top.inspirar-bg-primary img {
+  -webkit-transition: all 0.5s ease 0s;
+  transition: all 0.5s ease 0s;
+  width: 150px;
 }
 
 .heading_nav_default.fixed-top, .heading_nav_default.bg-transparent {
@@ -227,6 +240,12 @@ button, .btn:focus, a:focus {
 
 .heading_nav_default .site-logo p.site-description {
   color: #ffffff;
+}
+
+.heading_nav_default .site-logo img {
+  -webkit-transition: all 0.5s ease 0s;
+  transition: all 0.5s ease 0s;
+  width: 200px;
 }
 
 ul.nav {
@@ -485,6 +504,14 @@ ul.nav li.active > a {
   }
 }
 
+.background-blend-mode-overlay {
+  background-blend-mode: overlay;
+}
+
+.inspirar-page-banner-two .inspirar-page-banner-content .inspirar-header-title h1 {
+  padding-bottom: 20px;
+}
+
 .single-post .inspirar-page-banner {
   height: 250px;
 }
@@ -706,6 +733,40 @@ ul.nav li.active > a {
   color: #a9a9a9;
 }
 
+.site-copyright .widget {
+  margin-bottom: 0;
+}
+
+.site-copyright .inspirar-footer-menu {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-align: right;
+}
+
+.site-copyright .inspirar-footer-menu li {
+  display: inline-block;
+  padding-right: 10px;
+}
+
+.site-copyright .inspirar-footer-menu li:last-child {
+  padding-right: 0;
+}
+
+.site-copyright .footer-social-links {
+  text-align: center;
+}
+
+.site-copyright .footer-social-links .footer-social-nav a {
+  font-size: 19px;
+  color: #f9f9f9;
+  padding: 0 10px;
+}
+
+.site-copyright .footer-social-links .footer-social-nav a:last-child {
+  padding-right: 0;
+}
+
 /*============== page css start =================*/
 /******** Blog css *********/
 .blog {
@@ -763,7 +824,6 @@ ul.nav li.active > a {
 .blog.inspirar-content-area article.post .post-content .entry-header h3 a {
   color: #252525;
   font-size: 30px;
-  font-family: "butlerbold", sans-serif;
   margin-bottom: 0;
   display: block;
 }
@@ -1604,7 +1664,7 @@ input.search-field.form-control {
   background-color: #fc5e11;
 }
 
-.error404 .heading_nav_default.menu-transparent {
+.error404 .heading_nav_default.bg-transparent {
   background-color: #fc5e11 !important;
 }
 
