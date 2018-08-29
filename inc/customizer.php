@@ -279,8 +279,21 @@ function inspirar_customize_register( $wp_customize ) {
         'settings' => 'inspirar_menu_bg_color'
     )) );
 
+    $wp_customize->add_setting( 'inspirar_sticky_menu_bg_color', array(
+        'default'           => '',
+        'type'              => 'theme_mod',
+        'capability'        => 'edit_theme_options',
+        'sanitize_callback' => 'sanitize_hex_color'
+    ));
+
+    $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'inspirar_sticky_menu_bg_color', array(
+        'label' => __('Sticky Menu Background color', 'inspirar'),
+        'section' => 'inspirar_main_menu_section',
+        'settings' => 'inspirar_sticky_menu_bg_color'
+    )) );
+
     $wp_customize->add_setting( 'inspirar_main_menu_fz', array(
-        'default'           => '13px',
+        'default'           => '',
         'type'              => 'theme_mod',
         'capability'        => 'edit_theme_options',
         'sanitize_callback' => 'wp_filter_nohtml_kses'
@@ -295,7 +308,7 @@ function inspirar_customize_register( $wp_customize ) {
     ));
 
     $wp_customize->add_setting( 'inspirar_main_menu_fw', array(
-        'default'           => '500',
+        'default'           => '',
         'type'              => 'theme_mod',
         'capability'        => 'edit_theme_options',
         'sanitize_callback' => 'wp_filter_nohtml_kses'
@@ -322,7 +335,7 @@ function inspirar_customize_register( $wp_customize ) {
         'settings' => 'inspirar_main_menu_text_transform',
     ) );
     $wp_customize->add_setting( 'inspirar_menu_text_color', array(
-    	'default' 	        => '#ffffff',
+    	'default' 	        => '',
     	'type'		        => 'theme_mod',
     	'capability'        => 'edit_theme_options',
     	'sanitize_callback' => 'sanitize_hex_color'
@@ -335,7 +348,7 @@ function inspirar_customize_register( $wp_customize ) {
     )) );
 
     $wp_customize->add_setting( 'inspirar_menu_text_hover_color', array(
-    	'default' 	        => '#fff',
+    	'default' 	        => '',
     	'type'		        => 'theme_mod',
     	'capability'        => 'edit_theme_options',
     	'sanitize_callback' => 'sanitize_hex_color'
@@ -347,8 +360,21 @@ function inspirar_customize_register( $wp_customize ) {
 		'settings' => 'inspirar_menu_text_hover_color'
     )) );
 
+    $wp_customize->add_setting( 'inspirar_menu_border_color', array(
+        'default'           => '',
+        'type'              => 'theme_mod',
+        'capability'        => 'edit_theme_options',
+        'sanitize_callback' => 'sanitize_hex_color'
+    ));
+
+    $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'inspirar_menu_border_color', array(
+        'label' => __('Main Menu Border color', 'inspirar'),
+        'section' => 'inspirar_main_menu_section',
+        'settings' => 'inspirar_menu_border_color'
+    )) );
+
     $wp_customize->add_setting( 'inspirar_menu_border_hover_color', array(
-    	'default' 	        => '#fff',
+    	'default' 	        => '',
     	'type'		        => 'theme_mod',
     	'capability'        => 'edit_theme_options',
     	'sanitize_callback' => 'sanitize_hex_color'
@@ -362,7 +388,7 @@ function inspirar_customize_register( $wp_customize ) {
 
 
     $wp_customize->add_setting( 'inspirar_sub_menu_width', array(
-        'default'           => '220px',
+        'default'           => '',
         'type'              => 'theme_mod',
         'capability'        => 'edit_theme_options',
         'sanitize_callback' => 'wp_filter_nohtml_kses'
@@ -377,7 +403,7 @@ function inspirar_customize_register( $wp_customize ) {
     ));
 
     $wp_customize->add_setting( 'inspirar_sub_menu_bg_color', array(
-        'default'           => '#fff',
+        'default'           => '',
         'type'              => 'theme_mod',
         'capability'        => 'edit_theme_options',
         'sanitize_callback' => 'sanitize_hex_color'
@@ -390,7 +416,7 @@ function inspirar_customize_register( $wp_customize ) {
     )) );
 
     $wp_customize->add_setting( 'inspirar_sub_menu_fz', array(
-        'default'           => '13px',
+        'default'           => '',
         'type'              => 'theme_mod',
         'capability'        => 'edit_theme_options',
         'sanitize_callback' => 'wp_filter_nohtml_kses'
@@ -419,7 +445,7 @@ function inspirar_customize_register( $wp_customize ) {
     ) );
 
     $wp_customize->add_setting( 'inspirar_sub_menu_fw', array(
-        'default'           => '500',
+        'default'           => '',
         'type'              => 'theme_mod',
         'capability'        => 'edit_theme_options',
         'sanitize_callback' => 'wp_filter_nohtml_kses'
@@ -433,7 +459,7 @@ function inspirar_customize_register( $wp_customize ) {
     ));
 
    $wp_customize->add_setting( 'inspirar_sub_menu_font_color', array(
-        'default'           => '#252525',
+        'default'           => '',
         'type'              => 'theme_mod',
         'transport'         => 'postMessage',
         'capability'        => 'edit_theme_options',
@@ -447,7 +473,7 @@ function inspirar_customize_register( $wp_customize ) {
     )) );
 
     $wp_customize->add_setting( 'inspirar_sub_menu_font_hover_color', array(
-        'default'           => '#252525',
+        'default'           => '',
         'type'              => 'theme_mod',
         'capability'        => 'edit_theme_options',
         'sanitize_callback' => 'sanitize_hex_color'
@@ -460,7 +486,7 @@ function inspirar_customize_register( $wp_customize ) {
     )) );
 
     $wp_customize->add_setting( 'inspirar_sub_menu_border_color', array(
-        'default'           => '#d9dfe5',
+        'default'           => '',
         'type'              => 'theme_mod',
         'transport'         => 'postMessage',
         'capability'        => 'edit_theme_options',
@@ -481,8 +507,27 @@ function inspirar_customize_register( $wp_customize ) {
         'panel'     => 'inspirar_theme_options'
     ));
 
+    $wp_customize->add_setting( 'inspirar_page_banner_section_text_align', array(
+        'default'           => '',
+        'type'              => 'theme_mod',
+        'capability'        => 'edit_theme_options',
+        'sanitize_callback' => 'inspirar_sanitize_select'
+    ));
+
+     $wp_customize->add_control( 'inspirar_page_banner_section_text_align', array(
+        'label' => __('Text Align', 'inspirar'),
+        'type' => 'select',
+        'choices' => array(
+            'text-right' => __('Align Right','inspirar'),
+            'text-left' => __('Align Left','inspirar'),
+            'text-center' => __('Align Center','inspirar'),
+        ),
+        'section' => 'inspirar_page_banner_section',
+        'settings' => 'inspirar_page_banner_section_text_align'
+    ) );
+
     $wp_customize->add_setting( 'inspirar_page_banner_height', array(
-        'default'           => '540px',
+        'default'           => '',
         'type'              => 'theme_mod',
         'capability'        => 'edit_theme_options',
         'sanitize_callback' => 'wp_filter_nohtml_kses'
@@ -497,7 +542,7 @@ function inspirar_customize_register( $wp_customize ) {
     ));
 
     $wp_customize->add_setting( 'inspirar_page_banner_bg_blend_mode', array(
-        'default'           => true,
+        'default'           => false,
         'type'              => 'theme_mod',
         'capability'        => 'edit_theme_options',
         'sanitize_callback' => 'inspirar_sanitize_checkbox'
@@ -508,9 +553,9 @@ function inspirar_customize_register( $wp_customize ) {
         'section' => 'inspirar_page_banner_section',
         'settings' => 'inspirar_page_banner_bg_blend_mode'
     ) );
-    
+
     $wp_customize->add_setting( 'inspirar_page_banner_bg_color', array(
-        'default'           => '#7c340e',
+        'default'           => '',
         'type'              => 'theme_mod',
         'capability'        => 'edit_theme_options',
         'sanitize_callback' => 'sanitize_hex_color'
@@ -538,7 +583,7 @@ function inspirar_customize_register( $wp_customize ) {
     ));
 
     $wp_customize->add_setting( 'inspirar_page_banner_font_color', array(
-        'default'           => '#fff',
+        'default'           => '',
         'type'              => 'theme_mod',
         'capability'        => 'edit_theme_options',
         'sanitize_callback' => 'sanitize_hex_color'
@@ -551,7 +596,7 @@ function inspirar_customize_register( $wp_customize ) {
     )) );
 
     $wp_customize->add_setting( 'inspirar_page_banner_font_size', array(
-        'default'           => '30px',
+        'default'           => '',
         'type'              => 'theme_mod',
         'capability'        => 'edit_theme_options',
         'sanitize_callback' => 'wp_filter_nohtml_kses'
@@ -585,8 +630,60 @@ function inspirar_customize_register( $wp_customize ) {
         'settings' => 'inspirar_page_breadcrumbs_section_visiblity'
     ) );
 
+
+    $wp_customize->add_setting( 'inspirar_page_breadcrumbs_bg_color', array(
+        'default'           => '',
+        'type'              => 'theme_mod',
+        'capability'        => 'edit_theme_options',
+        'sanitize_callback' => 'sanitize_hex_color'
+    ));
+
+    $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'inspirar_page_breadcrumbs_bg_color', array(
+        'label' => __('Background color', 'inspirar'),
+        'section' => 'inspirar_page_breadcrumbs_section',
+        'settings' => 'inspirar_page_breadcrumbs_bg_color'
+    )) );
+
+
+    $wp_customize->add_setting( 'inspirar_page_breadcrumbs_section_style', array(
+        'default'           => '',
+        'type'              => 'theme_mod',
+        'capability'        => 'edit_theme_options',
+        'sanitize_callback' => 'inspirar_sanitize_select'
+    ));
+
+     $wp_customize->add_control( 'inspirar_page_breadcrumbs_section_style', array(
+        'label' => __('Breadcrumbs Style', 'inspirar'),
+        'type' => 'select',
+        'choices' => array(
+            'style_1' => __('Style 1','inspirar'),
+            'style_2' => __('Style 2','inspirar'),
+        ),
+        'section' => 'inspirar_page_breadcrumbs_section',
+        'settings' => 'inspirar_page_breadcrumbs_section_style'
+    ) );
+
+    $wp_customize->add_setting( 'inspirar_page_breadcrumbs_text_align', array(
+        'default'           => '',
+        'type'              => 'theme_mod',
+        'capability'        => 'edit_theme_options',
+        'sanitize_callback' => 'inspirar_sanitize_select'
+    ));
+
+     $wp_customize->add_control( 'inspirar_page_breadcrumbs_text_align', array(
+        'label' => __('Text Align', 'inspirar'),
+        'type' => 'select',
+        'choices' => array(
+            'text-right' => __('Align Right','inspirar'),
+            'text-left' => __('Align Left','inspirar'),
+            'text-center' => __('Align Center','inspirar'),
+        ),
+        'section' => 'inspirar_page_breadcrumbs_section',
+        'settings' => 'inspirar_page_breadcrumbs_text_align'
+    ) );
+
     $wp_customize->add_setting( 'inspirar_page_breadcrumbs_font_color', array(
-        'default'           => '#fff',
+        'default'           => '',
         'type'              => 'theme_mod',
         'capability'        => 'edit_theme_options',
         'sanitize_callback' => 'sanitize_hex_color'
@@ -599,7 +696,7 @@ function inspirar_customize_register( $wp_customize ) {
     )) );
 
      $wp_customize->add_setting( 'inspirar_page_breadcrumbs_active_font_color', array(
-        'default'           => '#fff',
+        'default'           => '',
         'type'              => 'theme_mod',
         'capability'        => 'edit_theme_options',
         'sanitize_callback' => 'sanitize_hex_color'
@@ -612,7 +709,7 @@ function inspirar_customize_register( $wp_customize ) {
     )) );
 
     $wp_customize->add_setting( 'inspirar_page_breadcrumbs_font_size', array(
-        'default'           => '12px',
+        'default'           => '',
         'type'              => 'theme_mod',
         'capability'        => 'edit_theme_options',
         'sanitize_callback' => 'wp_filter_nohtml_kses'
@@ -625,6 +722,7 @@ function inspirar_customize_register( $wp_customize ) {
         'section'    => 'inspirar_page_breadcrumbs_section',
         'settings'   => 'inspirar_page_breadcrumbs_font_size',
     ));
+
 
     // Blog section
     $wp_customize->add_section( 'inspirar_blog_section', array(
@@ -804,7 +902,7 @@ function inspirar_customize_register( $wp_customize ) {
     ) );
 
     $wp_customize->add_setting( 'inspirar_footer_widgets_padding_top', array(
-        'default'           => '100px',
+        'default'           => '',
         'type'              => 'theme_mod',
         'capability'        => 'edit_theme_options',
         'sanitize_callback' => 'wp_filter_nohtml_kses'
@@ -820,7 +918,7 @@ function inspirar_customize_register( $wp_customize ) {
 
 
     $wp_customize->add_setting( 'inspirar_footer_widgets_padding_bottom', array(
-        'default'           => '100px',
+        'default'           => '',
         'type'              => 'theme_mod',
         'capability'        => 'edit_theme_options',
         'sanitize_callback' => 'wp_filter_nohtml_kses'
@@ -835,7 +933,7 @@ function inspirar_customize_register( $wp_customize ) {
     ));
 
     $wp_customize->add_setting( 'inspirar_footer_widgets_section_bg_color', array(
-    	'default' 	        => '#252525',
+    	'default' 	        => '',
     	'type'		        => 'theme_mod',
     	'capability'        => 'edit_theme_options',
     	'sanitize_callback' => 'sanitize_hex_color'
@@ -848,7 +946,7 @@ function inspirar_customize_register( $wp_customize ) {
     )) );
 
     $wp_customize->add_setting( 'inspirar_footer_widgets_heading_text_fz', array(
-        'default'           => '20px',
+        'default'           => '',
         'type'              => 'theme_mod',
         'capability'        => 'edit_theme_options',
         'sanitize_callback' => 'wp_filter_nohtml_kses'
@@ -863,7 +961,7 @@ function inspirar_customize_register( $wp_customize ) {
     ));
 
     $wp_customize->add_setting( 'inspirar_footer_widgets_heading_text_color', array(
-        'default'           => '#fff',
+        'default'           => '',
         'type'              => 'theme_mod',
         'capability'        => 'edit_theme_options',
         'sanitize_callback' => 'sanitize_hex_color'
@@ -876,11 +974,23 @@ function inspirar_customize_register( $wp_customize ) {
     )) );
 
     $wp_customize->add_setting( 'inspirar_footer_widgets_link_text_fz', array(
-        'default'           => '15px',
+        'default'           => '',
         'type'              => 'theme_mod',
         'capability'        => 'edit_theme_options',
         'sanitize_callback' => 'wp_filter_nohtml_kses'
     ));
+
+    $wp_customize->add_setting( 'inspirar_footer_widgets_text_color', array(
+        'default'           => '',
+        'type'              => 'theme_mod',
+        'capability'        => 'edit_theme_options',
+        'sanitize_callback' => 'sanitize_hex_color'
+    ));
+    $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'inspirar_footer_widgets_text_color', array(
+        'label' => __('Text Font color', 'inspirar'),
+        'section' => 'inspirar_widgets_section',
+        'settings' => 'inspirar_footer_widgets_text_color'
+    )) );
 
     $wp_customize->add_control('inspirar_footer_widgets_link_text_fz', array(
         'type' => 'text',
@@ -891,7 +1001,7 @@ function inspirar_customize_register( $wp_customize ) {
     ));
 
     $wp_customize->add_setting( 'inspirar_footer_widgets_link_text_color', array(
-        'default'           => '#ccc',
+        'default'           => '',
         'type'              => 'theme_mod',
         'capability'        => 'edit_theme_options',
         'sanitize_callback' => 'sanitize_hex_color'
@@ -902,6 +1012,21 @@ function inspirar_customize_register( $wp_customize ) {
         'section' => 'inspirar_widgets_section',
         'settings' => 'inspirar_footer_widgets_link_text_color'
     )) );
+
+    $wp_customize->add_setting( 'inspirar_footer_widgets_link_text_hover_color', array(
+        'default'           => '',
+        'type'              => 'theme_mod',
+        'capability'        => 'edit_theme_options',
+        'sanitize_callback' => 'sanitize_hex_color'
+    ));
+
+    $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'inspirar_footer_widgets_link_text_hover_color', array(
+        'label' => __('Link Text Hover color', 'inspirar'),
+        'section' => 'inspirar_widgets_section',
+        'settings' => 'inspirar_footer_widgets_link_text_hover_color'
+    )) );
+
+
 
     // Footer Copyright section
     $wp_customize->add_section( 'inspirar_copyright_section', array(
@@ -923,8 +1048,128 @@ function inspirar_customize_register( $wp_customize ) {
 		'settings' => 'inspirar_copyright_section_visiblity'
     ) );
 
+    $wp_customize->add_setting( 'inspirar_copyright_section_columns', array(
+        'default'           => '12',
+        'type'              => 'theme_mod',
+        'capability'        => 'edit_theme_options',
+        'sanitize_callback' => 'inspirar_sanitize_select',
+    ));
+    $wp_customize->add_control( 'inspirar_copyright_section_columns', array(
+        'label' => __('Number of Columns', 'inspirar'),
+        'type' => 'select',
+        'choices' => array(
+            '12' => __('1 Column','inspirar'),
+            '6' => __('2 Column','inspirar'),
+            '4' => __('3 Column','inspirar'),
+        ),
+        'section' => 'inspirar_copyright_section',
+        'settings' => 'inspirar_copyright_section_columns'
+    ) );
+
+    $wp_customize->add_setting( 'inspirar_copyright_section_content_c_one', array(
+        'default'           => 'text',
+        'type'              => 'theme_mod',
+        'capability'        => 'edit_theme_options',
+        'sanitize_callback' => 'inspirar_sanitize_select'
+    ));
+    $wp_customize->add_control( 'inspirar_copyright_section_content_c_one', array(
+        'label' => __('1st Column', 'inspirar'),
+        'type' => 'select',
+        'choices' => array(
+            'text' => __('Custom Text','inspirar'),
+            'widget' => __('Widgets','inspirar'),
+            'menu' => __('Footer Menu','inspirar'),
+        ),
+        'section' => 'inspirar_copyright_section',
+        'settings' => 'inspirar_copyright_section_content_c_one'
+    ) );
+
+    $wp_customize->add_setting( 'inspirar_cloumn_one_custom_text', array(
+        'default'           => '',
+        'type'              => 'theme_mod',
+        'capability'        => 'edit_theme_options',
+        'sanitize_callback' => 'wp_kses_post'
+    ));
+
+    $wp_customize->add_control('inspirar_cloumn_one_custom_text', array(
+        'type' => 'textarea',
+        'label'      => __('Custom Text', 'inspirar'),
+        'description' => __('HTML tags allowed: a, br, strong, em, span', 'inspirar'),
+        'section'    => 'inspirar_copyright_section',
+        'settings'   => 'inspirar_cloumn_one_custom_text',
+    ));
+
+
+    $wp_customize->add_setting( 'inspirar_copyright_section_content_c_two', array(
+        'default'           => 'widget',
+        'type'              => 'theme_mod',
+        'capability'        => 'edit_theme_options',
+        'sanitize_callback' => 'inspirar_sanitize_select'
+    ));
+
+     $wp_customize->add_control( 'inspirar_copyright_section_content_c_two', array(
+        'label' => __('2nd Column', 'inspirar'),
+        'type' => 'select',
+        'choices' => array(
+            'text' => __('Custom Text','inspirar'),
+            'widget' => __('Widgets','inspirar'),
+            'menu' => __('Footer Menu','inspirar'),
+        ),
+        'section' => 'inspirar_copyright_section',
+        'settings' => 'inspirar_copyright_section_content_c_two'
+    ) );
+
+    $wp_customize->add_setting( 'inspirar_cloumn_two_custom_text', array(
+        'default'           => '',
+        'type'              => 'theme_mod',
+        'capability'        => 'edit_theme_options',
+        'sanitize_callback' => 'wp_kses_post'
+    ));
+
+    $wp_customize->add_control('inspirar_cloumn_two_custom_text', array(
+        'type' => 'textarea',
+        'label'      => __('Custom Text', 'inspirar'),
+        'description' => __('HTML tags allowed: a, br, strong, em, span', 'inspirar'),
+        'section'    => 'inspirar_copyright_section',
+        'settings'   => 'inspirar_cloumn_two_custom_text',
+    ));
+
+    $wp_customize->add_setting( 'inspirar_copyright_section_content_c_three', array(
+        'default'           => 'text',
+        'type'              => 'theme_mod',
+        'capability'        => 'edit_theme_options',
+        'sanitize_callback' => 'inspirar_sanitize_select'
+    ));
+
+     $wp_customize->add_control( 'inspirar_copyright_section_content_c_three', array(
+        'label' => __('3nd Column', 'inspirar'),
+        'type' => 'select',
+        'choices' => array(
+            'text' => __('Custom Text','inspirar'),
+            'widget' => __('Widgets','inspirar'),
+            'menu' => __('Footer Menu','inspirar'),
+        ),
+        'section' => 'inspirar_copyright_section',
+        'settings' => 'inspirar_copyright_section_content_c_three'
+    ) );
+
+    $wp_customize->add_setting( 'inspirar_cloumn_three_custom_text', array(
+        'default'           => '',
+        'type'              => 'theme_mod',
+        'capability'        => 'edit_theme_options',
+        'sanitize_callback' => 'wp_kses_post'
+    ));
+
+    $wp_customize->add_control('inspirar_cloumn_three_custom_text', array(
+        'type' => 'textarea',
+        'label'      => __('Copyright/Powered By Text', 'inspirar'),
+        'description' => __('HTML tags allowed: a, br, strong, em, span', 'inspirar'),
+        'section'    => 'inspirar_copyright_section',
+        'settings'   => 'inspirar_cloumn_three_custom_text',
+    ));
+    
     $wp_customize->add_setting( 'inspirar_copyright_padding_top', array(
-        'default'           => '40px',
+        'default'           => '',
         'type'              => 'theme_mod',
         'capability'        => 'edit_theme_options',
         'sanitize_callback' => 'wp_filter_nohtml_kses'
@@ -940,7 +1185,7 @@ function inspirar_customize_register( $wp_customize ) {
 
 
     $wp_customize->add_setting( 'inspirar_copyright_padding_bottom', array(
-        'default'           => '40px',
+        'default'           => '',
         'type'              => 'theme_mod',
         'capability'        => 'edit_theme_options',
         'sanitize_callback' => 'wp_filter_nohtml_kses'
@@ -955,7 +1200,7 @@ function inspirar_customize_register( $wp_customize ) {
     ));
 
     $wp_customize->add_setting( 'inspirar_copyright_section_text_alignment', array(
-    	'default' 	        => 'text-center',
+    	'default' 	        => '',
     	'type'		        => 'theme_mod',
     	'capability'        => 'edit_theme_options',
     	'sanitize_callback' => 'inspirar_sanitize_select'
@@ -972,23 +1217,8 @@ function inspirar_customize_register( $wp_customize ) {
 		'settings' => 'inspirar_copyright_section_text_alignment'
     ) );
 
-    $wp_customize->add_setting( 'inspirar_copyright_text', array(
-        'default'           => '',
-        'type'              => 'theme_mod',
-        'capability'        => 'edit_theme_options',
-        'sanitize_callback' => 'wp_kses_post'
-    ));
-
-    $wp_customize->add_control('inspirar_copyright_text', array(
-    	'type' => 'textarea',
-        'label'      => __('Copyright Text', 'inspirar'),
-        'description' => __('HTML tags allowed: a, br, strong, em, span', 'inspirar'),
-        'section'    => 'inspirar_copyright_section',
-        'settings'   => 'inspirar_copyright_text',
-    ));
-
     $wp_customize->add_setting( 'inspirar_copyright_text_fz', array(
-        'default'           => '14px',
+        'default'           => '',
         'type'              => 'theme_mod',
         'capability'        => 'edit_theme_options',
         'sanitize_callback' => 'wp_filter_nohtml_kses'
@@ -1003,7 +1233,7 @@ function inspirar_customize_register( $wp_customize ) {
     ));
 
     $wp_customize->add_setting( 'inspirar_copyright_section_border_top_color', array(
-    	'default' 	        => '#575757',
+    	'default' 	        => '',
     	'type'		        => 'theme_mod',
     	'capability'        => 'edit_theme_options',
     	'sanitize_callback' => 'sanitize_hex_color'
@@ -1016,7 +1246,7 @@ function inspirar_customize_register( $wp_customize ) {
     )) );
 
     $wp_customize->add_setting( 'inspirar_copyright_section_bg_color', array(
-    	'default' 	        => '#1c1c1c',
+    	'default' 	        => '',
     	'type'		        => 'theme_mod',
     	'capability'        => 'edit_theme_options',
     	'sanitize_callback' => 'sanitize_hex_color'
@@ -1029,7 +1259,7 @@ function inspirar_customize_register( $wp_customize ) {
     )) );
 
     $wp_customize->add_setting( 'inspirar_copyright_section_text_color', array(
-    	'default' 	        => '#a9a9a9',
+    	'default' 	        => '',
     	'type'		        => 'theme_mod',
     	'capability'        => 'edit_theme_options',
     	'sanitize_callback' => 'sanitize_hex_color'
@@ -1042,7 +1272,7 @@ function inspirar_customize_register( $wp_customize ) {
     )) );
 
     $wp_customize->add_setting( 'inspirar_copyright_section_link_color', array(
-    	'default' 	        => '#fff',
+    	'default' 	        => '',
     	'type'		        => 'theme_mod',
     	'capability'        => 'edit_theme_options',
     	'sanitize_callback' => 'sanitize_hex_color'
@@ -1055,7 +1285,7 @@ function inspirar_customize_register( $wp_customize ) {
     )) );
 
     $wp_customize->add_setting( 'inspirar_copyright_section_link_hover_color', array(
-    	'default' 	        => '#a9a9a9',
+    	'default' 	        => '',
     	'type'		        => 'theme_mod',
     	'capability'        => 'edit_theme_options',
     	'sanitize_callback' => 'sanitize_hex_color'
@@ -1066,6 +1296,11 @@ function inspirar_customize_register( $wp_customize ) {
 		'section' => 'inspirar_copyright_section',
 		'settings' => 'inspirar_copyright_section_link_hover_color'
     )) );
+
+
+
+
+
 
 
 
@@ -1099,12 +1334,14 @@ function inspirar_custom_styling(){
 
 	// main menu variable
 	$inspirar_menu_bg_color = get_theme_mod('inspirar_menu_bg_color');
+    $inspirar_sticky_menu_bg_color = get_theme_mod('inspirar_sticky_menu_bg_color');
     $inspirar_main_menu_fz = get_theme_mod('inspirar_main_menu_fz');
     $inspirar_main_menu_fw = get_theme_mod('inspirar_main_menu_fw');
     $inspirar_main_menu_text_transform = get_theme_mod('inspirar_main_menu_text_transform');
 	$inspirar_menu_text_color = get_theme_mod('inspirar_menu_text_color');
 	$inspirar_menu_text_hover_color = get_theme_mod('inspirar_menu_text_hover_color');
-	$inspirar_menu_text_border_color = get_theme_mod('inspirar_menu_border_hover_color');
+    $inspirar_menu_border_color = get_theme_mod('inspirar_menu_border_color');
+	$inspirar_menu_border_hover_color = get_theme_mod('inspirar_menu_border_hover_color');
 
     $inspirar_sub_menu_width = get_theme_mod('inspirar_sub_menu_width');
     $inspirar_sub_menu_fz = get_theme_mod('inspirar_sub_menu_fz');
@@ -1118,12 +1355,14 @@ function inspirar_custom_styling(){
     // page banner variable
     $inspirar_page_banner_height = get_theme_mod('inspirar_page_banner_height');
     $inspirar_page_banner_bg_color = get_theme_mod('inspirar_page_banner_bg_color');
-    $inspirar_page_banner_bg_blend_mode = get_theme_mod('inspirar_page_banner_bg_blend_mode', true);
+    $inspirar_page_banner_bg_blend_mode = get_theme_mod('inspirar_page_banner_bg_blend_mode', false);
     $inspirar_page_banner_bg_opacity = get_theme_mod('inspirar_page_banner_bg_opacity');
     $inspirar_page_banner_font_color = get_theme_mod('inspirar_page_banner_font_color');
     $inspirar_page_banner_font_size = get_theme_mod('inspirar_page_banner_font_size');
 
+    
     // page breadcrumbs variable
+    $inspirar_page_breadcrumbs_bg_color = get_theme_mod('inspirar_page_breadcrumbs_bg_color');
     $inspirar_page_breadcrumbs_font_color = get_theme_mod('inspirar_page_breadcrumbs_font_color');
     $inspirar_page_breadcrumbs_active_font_color = get_theme_mod('inspirar_page_breadcrumbs_active_font_color');
     $inspirar_page_breadcrumbs_font_size = get_theme_mod('inspirar_page_breadcrumbs_font_size');
@@ -1135,7 +1374,10 @@ function inspirar_custom_styling(){
     $inspirar_footer_widgets_heading_text_fz = get_theme_mod('inspirar_footer_widgets_heading_text_fz');
     $inspirar_footer_widgets_heading_text_color = get_theme_mod('inspirar_footer_widgets_heading_text_color');
     $inspirar_footer_widgets_link_text_fz = get_theme_mod('inspirar_footer_widgets_link_text_fz');
+    $inspirar_footer_widgets_text_color = get_theme_mod('inspirar_footer_widgets_text_color');
     $inspirar_footer_widgets_link_text_color = get_theme_mod('inspirar_footer_widgets_link_text_color');
+    $inspirar_footer_widgets_link_text_hover_color = get_theme_mod('inspirar_footer_widgets_link_text_hover_color');
+
 
 	// footer copright variable
     $inspirar_copyright_section_border_top_color = get_theme_mod('inspirar_copyright_section_border_top_color');
@@ -1201,148 +1443,166 @@ function inspirar_custom_styling(){
 
 	// main menu css
 	if( $inspirar_menu_bg_color ){
-		$output .= '.heading_nav_default, .heading_nav_default.lawyer-menu{ background:' . $inspirar_menu_bg_color .' !important }';
+		$output .= '.site .heading_nav_default, .site .heading_nav_default.lawyer-menu{ background:' . $inspirar_menu_bg_color .' !important }';
 	}
 
+    if( $inspirar_sticky_menu_bg_color ){
+        $output .= '.site .heading_nav_default.fixed-top.inspirar-bg-primary{ background:' . $inspirar_sticky_menu_bg_color .' !important }';
+    }
+
     if( $inspirar_main_menu_text_transform ){
-        $output .= '.heading_nav_default ul li a { text-transform: capitalize; }';
+        $output .= '.site .heading_nav_default ul li a { text-transform: capitalize; }';
     }
 
     if( $inspirar_main_menu_fz ){
-        $output .= '.heading_nav_default ul li a { font-size:' . $inspirar_main_menu_fz .' }';
+        $output .= '.site .heading_nav_default ul li a { font-size:' . $inspirar_main_menu_fz .' }';
     }
 
     if( $inspirar_main_menu_fw ){
-        $output .= '.heading_nav_default ul li a { font-weight:' . $inspirar_main_menu_fw .' }';
+        $output .= '.site .heading_nav_default ul li a { font-weight:' . $inspirar_main_menu_fw .' }';
     }
 
 	if( $inspirar_menu_text_color ){
-		$output .= '.heading_nav_default ul li a{ color:' . $inspirar_menu_text_color .' }';
+		$output .= '.site .heading_nav_default ul li a{ color:' . $inspirar_menu_text_color .' }';
 	}
 
 	if( $inspirar_menu_text_hover_color ){
-		$output .= '.heading_nav_default ul li a:hover{ color:' . $inspirar_menu_text_hover_color .' }';
+		$output .= '.site .heading_nav_default ul li a:hover{ color:' . $inspirar_menu_text_hover_color .' }';
 	}
 
-	if( $inspirar_menu_text_border_color ){
-		$output .= 'ul.nav li a:after { background-color:' . $inspirar_menu_text_border_color .' }';
+    if( $inspirar_menu_border_color ){
+        $output .= '.site .heading_nav_default ul.nav li a:before { background-color:' . $inspirar_menu_border_color .' }';
+    }
+
+	if( $inspirar_menu_border_hover_color ){
+		$output .= '.site .heading_nav_default ul.nav li a:after { background-color:' . $inspirar_menu_border_hover_color .' }';
 	}
 
     if( $inspirar_sub_menu_width ){
-        $output .= '.main-navigation ul ul a { width:' . $inspirar_sub_menu_width .' }';
+        $output .= '.site .main-navigation ul ul a { width:' . $inspirar_sub_menu_width .' }';
     }
 
     if( $inspirar_sub_menu_bg_color ){
-        $output .= '.main-navigation ul ul { background-color:' . $inspirar_sub_menu_bg_color .' }';
+        $output .= '.site .main-navigation ul ul { background-color:' . $inspirar_sub_menu_bg_color .' }';
     }
 
     if( $inspirar_sub_menu_fz ){
-        $output .= '.main-navigation ul ul a { font-size:' . $inspirar_sub_menu_fz .' }';
+        $output .= '.site .main-navigation ul ul a { font-size:' . $inspirar_sub_menu_fz .' }';
     }
 
     if( $inspirar_sub_menu_fw ){
-        $output .= '.main-navigation ul ul a { font-weight:' . $inspirar_sub_menu_fw .' }';
+        $output .= '.site .main-navigation ul ul a { font-weight:' . $inspirar_sub_menu_fw .' }';
     }
 
     if( $inspirar_sub_menu_text_transform ){
-        $output .= '.main-navigation ul ul a { text-transform: capitalize; }';
+        $output .= '.site .main-navigation ul ul a { text-transform: capitalize; }';
     }
 
     if( $inspirar_sub_menu_font_color ){
-        $output .= '.main-navigation ul ul a { color:' . $inspirar_sub_menu_font_color .' }';
+        $output .= '.site .main-navigation ul ul a { color:' . $inspirar_sub_menu_font_color .' }';
     }
 
     if( $inspirar_sub_menu_font_hover_color ){
-        $output .= '.main-navigation ul ul a:hover { color:' . $inspirar_sub_menu_font_hover_color .' }';
+        $output .= '.site .main-navigation ul ul a:hover { color:' . $inspirar_sub_menu_font_hover_color .' }';
     }
     
     if( $inspirar_sub_menu_border_color ){
-        $output .= '.main-navigation ul ul a { color:' . $inspirar_sub_menu_border_color .' }';
+        $output .= '.site .main-navigation ul ul a { color:' . $inspirar_sub_menu_border_color .' }';
     }
 
     // page banner css
     if( $inspirar_page_banner_height ){
-        $output .= '.inspirar-page-banner { height:' . $inspirar_page_banner_height .' }';
+        $output .= '.site .inspirar-page-banner { height:' . $inspirar_page_banner_height .' }';
     }
 
     if( $inspirar_page_banner_bg_color ){
-        $output .= '.inspirar-page-banner, .site .inspirar-page-banner.overlay:before { background-color:' . $inspirar_page_banner_bg_color .' }';
+        $output .= '.site .inspirar-page-banner, .site .inspirar-page-banner.overlay:before { background-color:' . $inspirar_page_banner_bg_color .' }';
     }
 
     if( $inspirar_page_banner_bg_blend_mode ){
-        $output .= '.site .inspirar-page-banner { background-blend-mode: overlay; }';
         $output .= '.site .inspirar-page-banner.overlay:before { background-color: transparent; opacity:1; }';
     }
 
     if( $inspirar_page_banner_bg_opacity ){
-        $output .= '.inspirar-page-banner, .site .inspirar-page-banner.overlay:before { opacity:' . $inspirar_page_banner_bg_opacity .' }';
+        $output .= '.site .inspirar-page-banner, .site .inspirar-page-banner.overlay:before { opacity:' . $inspirar_page_banner_bg_opacity .' }';
     }
 
     if( $inspirar_page_banner_font_color ){
-        $output .= '.inspirar-page-banner .inspirar-page-banner-content .inspirar-header-title h1 { color:' . $inspirar_page_banner_font_color .' }';
+        $output .= '.site .inspirar-page-banner .inspirar-page-banner-content .inspirar-header-title h1 { color:' . $inspirar_page_banner_font_color .' }';
     }
 
     if( $inspirar_page_banner_font_size ){
-        $output .= '.inspirar-page-banner .inspirar-page-banner-content .inspirar-header-title h1 { font-size:' . $inspirar_page_banner_font_size .' }';
+        $output .= '.site .inspirar-page-banner .inspirar-page-banner-content .inspirar-header-title h1 { font-size:' . $inspirar_page_banner_font_size .' }';
     }
 
     // page breadcrumbs css
+     if( $inspirar_page_breadcrumbs_bg_color ){
+        $output .= '.site .inspirar-page-banner .inspirar-page-banner-content .breadcrumbs-bg { background-color:' . $inspirar_page_breadcrumbs_bg_color .' }';
+    }
     if( $inspirar_page_breadcrumbs_font_size ){
-        $output .= '.inspirar-page-banner .inspirar-page-banner-content ul.inspirar-breadcrumbs li { font-size:' . $inspirar_page_breadcrumbs_font_size .' }';
+        $output .= '.site .inspirar-page-banner .inspirar-page-banner-content ul.inspirar-breadcrumbs li { font-size:' . $inspirar_page_breadcrumbs_font_size .' }';
     }
 
     if( $inspirar_page_breadcrumbs_font_color ){
-        $output .= '.inspirar-page-banner .inspirar-page-banner-content ul.inspirar-breadcrumbs li a, .inspirar-page-banner .inspirar-page-banner-content ul.inspirar-breadcrumbs li span { color:' . $inspirar_page_breadcrumbs_font_color .' }';
+        $output .= '.site .inspirar-page-banner .inspirar-page-banner-content ul.inspirar-breadcrumbs li a, .site .inspirar-page-banner .inspirar-page-banner-content ul.inspirar-breadcrumbs li span { color:' . $inspirar_page_breadcrumbs_font_color .' }';
     }
 
     if( $inspirar_page_breadcrumbs_active_font_color ){
-        $output .= '.inspirar-page-banner .inspirar-page-banner-content ul.inspirar-breadcrumbs li span, .inspirar-page-banner .inspirar-page-banner-content ul.inspirar-breadcrumbs span.separator { color:' . $inspirar_page_breadcrumbs_active_font_color .' }';
+        $output .= '.site .inspirar-page-banner .inspirar-page-banner-content ul.inspirar-breadcrumbs li span, .site .inspirar-page-banner .inspirar-page-banner-content ul.inspirar-breadcrumbs span.separator { color:' . $inspirar_page_breadcrumbs_active_font_color .' }';
     }
 
 	// footer widgets css
 	if( $inspirar_footer_widgets_section_bg_color ){
-		$output .= '.footer-widgets{ background-color:' . $inspirar_footer_widgets_section_bg_color .' }';
+		$output .= '.site .footer-widgets{ background-color:' . $inspirar_footer_widgets_section_bg_color .' }';
 	}
 
     if( $inspirar_footer_widgets_padding_top ){
-		$output .= '.footer-widgets{ padding-top:' . $inspirar_footer_widgets_padding_top .' }';
+		$output .= '.site .footer-widgets{ padding-top:' . $inspirar_footer_widgets_padding_top .' }';
 	}
 
 	if( $inspirar_footer_widgets_padding_top ){
-		$output .= '.footer-widgets{ padding-bottom:' . $inspirar_footer_widgets_padding_bottom .' }';
+		$output .= '.site .footer-widgets{ padding-bottom:' . $inspirar_footer_widgets_padding_bottom .' }';
 	}
 
     if( $inspirar_footer_widgets_heading_text_fz ){
-        $output .= '.footer-widgets .widget h3.widget-title { font-size:' . $inspirar_footer_widgets_heading_text_fz .' }';
+        $output .= '.site .footer-widgets .widget h3.widget-title{ font-size:' . $inspirar_footer_widgets_heading_text_fz .' }';
     }
 
     if( $inspirar_footer_widgets_heading_text_color ){
-        $output .= '.footer-widgets .widget h3.widget-title { color:' . $inspirar_footer_widgets_heading_text_color .' }';
+        $output .= '.site .footer-widgets .widget h3.widget-title{ color:' . $inspirar_footer_widgets_heading_text_color .' }';
+    }
+
+    if( $inspirar_footer_widgets_text_color ){
+        $output .= '.site .footer-widgets .widget p,.site .inspirar-construction.footer-widgets .widget .textwidget p, .site .footer-widgets .widget.widget_inspirar_contact_widget p, .site .footer-widgets .widget.widget_inspirar_contact_widget ul li{ color:' . $inspirar_footer_widgets_text_color .' }';
     }
 
     if( $inspirar_footer_widgets_link_text_color ){
-        $output .= '.footer-widgets .widget ul li a { color:' . $inspirar_footer_widgets_link_text_color .' }';
+        $output .= '.site .footer-widgets .widget ul li a, .site .footer-widgets .widget.widget_inspirar_contact_widget ul li a, .site .footer-widgets .widget.widget_inspirar_contact_widget a.read-more{ color:' . $inspirar_footer_widgets_link_text_color .' }';
+    }
+
+    if( $inspirar_footer_widgets_link_text_hover_color ){
+        $output .= '.site .footer-widgets .widget ul li a:hover, .site .footer-widgets .widget.widget_inspirar_contact_widget ul li a:hover, .site .footer-widgets .widget.widget_inspirar_contact_widget a.read-more:hover{ color:' . $inspirar_footer_widgets_link_text_hover_color .' }';
     }
 
     if( $inspirar_footer_widgets_link_text_fz ){
-        $output .= '.footer-widgets .widget ul li a { font-size:' . $inspirar_footer_widgets_link_text_fz .' }';
+        $output .= '.site .footer-widgets .widget ul li a, .site .footer-widgets .widget.widget_inspirar_contact_widget ul li a, .site .footer-widgets .widget.widget_inspirar_contact_widget a.read-more{ font-size:' . $inspirar_footer_widgets_link_text_fz .' }';
     }
 
 	// footer copright css
 	if( $inspirar_copyright_section_bg_color ){
-		$output .= '.site-copyright{ background-color:' . $inspirar_copyright_section_bg_color .' }';
+		$output .= '.site .site-copyright{ background-color:' . $inspirar_copyright_section_bg_color .' }';
 	}
 
 	if( $inspirar_copyright_section_border_top_color ){
-		$output .= '.site-copyright{ border-top: 1px solid ' . $inspirar_copyright_section_border_top_color .' }';
+		$output .= '.site .site-copyright{ border-top: 1px solid ' . $inspirar_copyright_section_border_top_color .' }';
 	}
 
     if( $inspirar_copyright_padding_top ){
-		$output .= '.site-copyright{ padding-top:' . $inspirar_copyright_padding_top .' }';
+		$output .= '.site .site-copyright{ padding-top:' . $inspirar_copyright_padding_top .' }';
 	}
 
 	if( $inspirar_copyright_padding_bottom ){
-		$output .= '.site-copyright{ padding-bottom:' . $inspirar_copyright_padding_bottom .' }';
+		$output .= '.site .site-copyright{ padding-bottom:' . $inspirar_copyright_padding_bottom .' }';
 	}
 
 	if( $inspirar_copyright_text_fz ){
@@ -1408,6 +1668,20 @@ function inspirar_sanitize_select( $input, $setting ){
 }
 
 
+//radio box sanitization function
+function inspirar_sanitize_radio( $input, $setting ){
+ 
+    //input must be a slug: lowercase alphanumeric characters, dashes and underscores are allowed only
+    $input = sanitize_key($input);
+
+    //get the list of possible radio box options 
+    $choices = $setting->manager->get_control( $setting->id )->choices;
+                     
+    //return input if valid or return default option
+    return ( array_key_exists( $input, $choices ) ? $input : $setting->default );                
+     
+}
+
  //file input sanitization function
 function inspirar_sanitize_file( $file, $setting ) {
     //allowed file types
@@ -1428,5 +1702,15 @@ function inspirar_sanitize_file( $file, $setting ) {
  */
 function inspirar_customize_preview_js() {
 	wp_enqueue_script( 'inspirar-customizer', get_template_directory_uri() . '/assets/js/customizer.js', array( 'customize-preview' ), '20151215', true );
+
 }
 add_action( 'customize_preview_init', 'inspirar_customize_preview_js' );
+
+
+function inspirar_customize_control_toggle() {
+    wp_enqueue_script( 'inspirar-contextual-controls', get_template_directory_uri() . '/assets/js/customizer-contextual.js', array( 'customize-controls' ), '20151215', true );
+
+}
+add_action( 'customize_controls_enqueue_scripts', 'inspirar_customize_control_toggle' );
+
+
