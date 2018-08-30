@@ -37,7 +37,7 @@ if ( ! function_exists( 'inspirar_setup' ) ) :
 
 
 		// This theme styles the visual editor with editor-style.css to match the theme style.
-		add_editor_style();
+		add_editor_style( array( 'assets/css/editor-style.css', inspirar_fonts_url() ));
 
 		/*
 		 * Enable support for Post Thumbnails on posts and pages.
@@ -344,4 +344,15 @@ function inspirar_modify_comment_form_fields($fields){
 
 	return $fields;
 }
-add_filter('comment_form_default_fields','inspirar_modify_comment_form_fields'); 
+add_filter('comment_form_default_fields','inspirar_modify_comment_form_fields');
+
+
+/* Calling in the admin area for the Welcome Page */
+if ( is_admin() ) {
+	require get_template_directory() . '/inc/admin/inspirar-admin-page.php';
+}
+
+/**
+ * Load upsell button in the customizer
+ */
+    require get_template_directory() . '/inc/upsell/class-customize.php';

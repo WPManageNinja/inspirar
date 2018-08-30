@@ -1299,6 +1299,57 @@ function inspirar_customize_register( $wp_customize ) {
 
 
 
+	/* ===== Upgrade to pro child class ==== */
+	class Inspirar_Customize_Upgrade_Control extends WP_Customize_Control {
+		public function render_content() {  ?>
+			<p class="inspirar-upgrade-title">
+                <span class="customize-control-title">
+                    <h3 style="text-align:center;"><div class="dashicons dashicons-megaphone"></div> <?php esc_html_e('Get Inspirar PRO WP Theme for only', 'inspirar'); ?> &#36;49.00</h3>
+                </span>
+			</p>
+			<p style="text-align:center;" class="inspirar-upgrade-button">
+				<a style="margin: 10px;" target="_blank" href="https://wpmanageninja.com/downloads/inspirar-pro-multipurpose-wordpress-theme-for-unlimited-website/" class="button button-secondary">
+					<?php esc_html_e('Get Inspirar PRO', 'inspirar'); ?>
+				</a>
+			</p>
+			<ul>
+			<li><div class="dashicons dashicons-yes" style="color: #1bda24;"></div><b><?php esc_html_e('Advanced Theme Options', 'inspirar'); ?></b></li>
+			<li><div class="dashicons dashicons-yes" style="color: #1bda24;"></div><b><?php esc_html_e('Drag and Drop Page Builder', 'inspirar'); ?></b></li>
+			<li><div class="dashicons dashicons-yes" style="color: #1bda24;"></div><b><?php esc_html_e('Theme Features Core Plugin', 'inspirar'); ?></b></li>
+			<li><div class="dashicons dashicons-yes" style="color: #1bda24;"></div><b><?php esc_html_e('Inline Editing', 'inspirar'); ?></b></li>
+			<li><div class="dashicons dashicons-yes" style="color: #1bda24;"></div><b><?php esc_html_e('Upload Your Own Logo', 'inspirar'); ?></b></li>
+			<li><div class="dashicons dashicons-yes" style="color: #1bda24;"></div><b><?php esc_html_e('Google Fonts', 'inspirar'); ?></b></li>
+			<li><div class="dashicons dashicons-yes" style="color: #1bda24;"></div><b><?php esc_html_e('Unlimited Colors and Skin', 'inspirar'); ?></b></li>
+			<li><div class="dashicons dashicons-yes" style="color: #1bda24;"></div><b><?php esc_html_e('One Click Demo Import', 'inspirar'); ?></b></li>
+			<li><div class="dashicons dashicons-yes" style="color: #1bda24;"></div><b><?php esc_html_e('Exclusive Widgets', 'inspirar'); ?></b></li>
+			<li><div class="dashicons dashicons-yes" style="color: #1bda24;"></div><b><?php esc_html_e('Custom Slider', 'inspirar'); ?></b></li>
+			<li><div class="dashicons dashicons-yes" style="color: #1bda24;"></div><b><?php esc_html_e('Footer Widgets', 'inspirar'); ?></b></li>
+			<li><div class="dashicons dashicons-yes" style="color: #1bda24;"></div><b><?php esc_html_e('Breadcrumb', 'inspirar'); ?></b></li>
+			<li><div class="dashicons dashicons-yes" style="color: #1bda24;"></div><b><?php esc_html_e('Stick menu', 'inspirar'); ?></b></li>
+			<li><div class="dashicons dashicons-yes" style="color: #1bda24;"></div><b><?php esc_html_e('20+ Shortcodes/Addons', 'inspirar'); ?></b></li>
+			<li><div class="dashicons dashicons-yes" style="color: #1bda24;"></div><b><?php esc_html_e('Background image/gradients/Overlay', 'inspirar'); ?></b></li>
+			<li><div class="dashicons dashicons-yes" style="color: #1bda24;"></div><b><?php esc_html_e('Documentation', 'inspirar'); ?></b></li>
+			<li><div class="dashicons dashicons-yes" style="color: #1bda24;"></div><b><?php esc_html_e('And much more...', 'inspirar'); ?></b></li>
+			<ul><?php
+		}
+	}
+
+	$wp_customize->add_section( 'inspirar_up_pro_section', array(
+		'title'    => esc_html__( 'More features? Upgrade to PRO', 'inspirar' ),
+		'priority' => 999,
+	));
+
+	$wp_customize->add_setting('inspirar_upgrade_pro', array(
+		'default' => '',
+		'type' => 'theme_mod',
+		'sanitize_callback' => 'esc_attr'
+	));
+
+	$wp_customize->add_control(new Inspirar_Customize_Upgrade_Control($wp_customize, 'inspirar_upgrade_pro', array(
+		'section' => 'inspirar_up_pro_section',
+		'settings' => 'inspirar_upgrade_pro',
+	)));
+
 
 
 
@@ -1520,6 +1571,7 @@ function inspirar_custom_styling(){
     }
 
     if( $inspirar_page_banner_bg_blend_mode ){
+	    $output .= '.site .inspirar-page-banner { background-blend-mode: overlay; }';
         $output .= '.site .inspirar-page-banner.overlay:before { background-color: transparent; opacity:1; }';
     }
 

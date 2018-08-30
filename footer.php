@@ -73,7 +73,7 @@
 								}
 
 								if( $inspirar_copyright_section_content_c_one === 'menu' ) { 
-									footer_copyright_menu();
+									inspirar_footer_copyright_menu();
 								}
 							?>
 
@@ -91,7 +91,7 @@
 							}
 
 							if( $inspirar_copyright_section_content_c_two === 'menu' ) { 
-								footer_copyright_menu();
+								inspirar_footer_copyright_menu();
 							}
 						?>
 
@@ -110,7 +110,7 @@
 							}
 
 							if( $inspirar_copyright_section_content_c_three === 'menu' ) { 
-								footer_copyright_menu();
+								inspirar_footer_copyright_menu();
 							}
 						?>
 					</div>

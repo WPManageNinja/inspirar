@@ -276,6 +276,7 @@ if( !function_exists( 'inspirar_footer_copyright_custom_text' ) ){
 		    );
 			echo wp_kses( $custom_text, $allowed_tags);
 	   	 } else { ?>
+            <div class="copyright-default text-center">
             <p>
                 <?php
                 /* translators: 1: Theme year, 2: Theme name. */
@@ -292,7 +293,8 @@ if( !function_exists( 'inspirar_footer_copyright_custom_text' ) ){
 		            /* translators: %s: CMS name, i.e. WordPress. */
 		            printf( esc_html__( 'Proudly powered by %s', 'inspirar' ), '<span>WordPress</span>' );
 		            ?>
-                </a>
+            </a>
+            </div>
 		<?php } 
 	}
 }

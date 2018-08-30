@@ -5,13 +5,13 @@ Author: WPManageNinja
 Author URI: https://wpmanageninja.com/
 Tags: Blog, Custom Background, Custom Menu, E-Commerce, woocommerce-ready, Featured Images, Footer Widgets, Full Width Template, One Column, Sticky Post, Customizer Ready, Threaded Comments, Translation Ready, Two Columns
 Requires at least: 4.0
-Version: 1.0.1
+Version: 1.1.3
 Tested up to: 4.9.8
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 == Description ==
-Inspirar is a free multi-purpose WordPress theme. It's perfect for web agency business,corporate business,personal and parallax business portfolio, photography sites and freelancer. It's built built on BootStrap4 with responsive, clean, modern, flat and minimal design. Inspirar also is ecommerce (WooCommerce) Compatible, Retina-Ready, SEO Friendly. The Theme is very light-weight and You can speed up your site without any further work / plugin.
+Inspirar is a free multi-purpose WordPress theme. It's perfect for web agency business,corporate business,personal and parallax business portfolio, photography sites and freelancer. It's built on BootStrap4 with responsive, clean, modern, flat and minimal design. Inspirar also is ecommerce (WooCommerce) Compatible, Retina-Ready, SEO Friendly. The Theme is very light-weight and You can speed up your site without any further work / plugin.
 
 == Installation ==
 
@@ -97,15 +97,31 @@ Inspirar bundles the following third-party resources:
 
 
 - Screenshot Image 
-    Header Image, Copyright rawpixel
+    Header Image Copyright rawpixel
     License: CC0 Creative Commons
-    Source: https://pixabay.com/en/achievement-agreement-business-3408115/
-
-    Post Image, Copyright Free-Photos
+    Source: https://pixabay.com/en/achievement-business-collaboration-3561061/
+    
+    Service 1 Image Copyright rawpixel
     License: CC0 Creative Commons
-    Source: https://pixabay.com/en/woman-working-business-woman-laptop-690036/
+    Source: https://pixabay.com/en/american-brainstorming-business-3563308/
+    
+    Service 2 Image Copyright rawpixel
+    License: CC0 Creative Commons
+    Source: https://pixabay.com/en/achievement-agreement-bump-business-3565812/s
 
 == Changelog ==
+Version 1.1.3
+1. Added pro version button on customizer
+2. Added inspirar about page on admin menu
+
+Version 1.1.2
+1. Fixed Small bugs
+
+Version 1.1.1
+1. Fixed Small bugs
+
+Version 1.1.0
+1. Fixed sanitization issue
 
 Version 1.0.0
 1. Initial version Release
