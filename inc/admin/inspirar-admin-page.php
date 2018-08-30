@@ -273,7 +273,7 @@ class Inspirar_Lite_Admin {
                 <div class="inspirar-row">
                     <div class="inspirar-col-8">
                         <div class="content">
-                            <p><?php esc_html_e('Inspirai Lawyer is a Clean and Corporate Friendly Lawyer, Legal Office and Attorney WordPress theme, It’s Fully Responsive with Powerful theme options, Drag and Drop Page Builder, WPML multilingual plugin support.', 'inspirar'); ?></p>
+                            <p><?php esc_html_e("Inspirai Lawyer is a Clean and Corporate Friendly Lawyer, Legal Office and Attorney WordPress theme, It'\s Fully Responsive with Powerful theme options, Drag and Drop Page Builder, WPML multilingual plugin support.", 'inspirar'); ?></p>
                         </div>
                     </div>
                     <div class="inspirar-col-4">

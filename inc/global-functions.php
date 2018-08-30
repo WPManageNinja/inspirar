@@ -285,7 +285,7 @@ if( !function_exists( 'inspirar_footer_copyright_custom_text' ) ){
 
                 <?php
                 /* translators: 1: Theme year, 2: Theme name. */
-                printf( esc_html__( 'Inspirar Theme By %1$s.', 'inspirar' ), '<a href="https://wpmanageninja.com">WPManageNinja.com</a>' );
+                printf( esc_html__( ' Theme By %1$s.', 'inspirar' ), '<a href="'.esc_url('https://wpmanageninja.com').'">WPManageNinja.com</a>' );
                 ?>
             </p>
             <a href="<?php echo esc_url( 'https://wordpress.org/' ); ?>">
