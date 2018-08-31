@@ -1334,21 +1334,32 @@ function inspirar_customize_register( $wp_customize ) {
 		}
 	}
 
-	$wp_customize->add_section( 'inspirar_up_pro_section', array(
-		'title'    => esc_html__( 'More features? Upgrade to PRO', 'inspirar' ),
-		'priority' => 999,
-	));
 
-	$wp_customize->add_setting('inspirar_upgrade_pro', array(
-		'default' => '',
-		'type' => 'theme_mod',
-		'sanitize_callback' => 'esc_attr'
-	));
+	
+	if(!defined('INSPIRAR_PRO_ACTIVATED')) {
 
-	$wp_customize->add_control(new Inspirar_Customize_Upgrade_Control($wp_customize, 'inspirar_upgrade_pro', array(
-		'section' => 'inspirar_up_pro_section',
-		'settings' => 'inspirar_upgrade_pro',
-	)));
+		$wp_customize->add_section( 'inspirar_up_pro_section', array(
+			'title'    => esc_html__( 'More features? Upgrade to PRO', 'inspirar' ),
+			'priority' => 999,
+		));
+
+		$wp_customize->add_setting('inspirar_upgrade_pro', array(
+			'default' => '',
+			'type' => 'theme_mod',
+			'sanitize_callback' => 'esc_attr'
+		));
+
+
+		$wp_customize->add_control(new Inspirar_Customize_Upgrade_Control($wp_customize, 'inspirar_upgrade_pro', array(
+			'section' => 'inspirar_up_pro_section',
+			'settings' => 'inspirar_upgrade_pro',
+		)));
+		
+		
+		
+    }
+	
+
 
 
 

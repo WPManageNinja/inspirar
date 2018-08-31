@@ -125,9 +125,11 @@ class Inspirar_Lite_Admin {
 						<?php echo esc_html($theme->get( 'Name' )) ." ". esc_html($theme->get( 'Version' )); ?>
 					</h1>
 					<?php echo esc_html($theme->display( 'Description' )); ?>
+                    <?php esc_html_e('To Learn About Inspirar Theme', 'inspirar'); ?> <a target="_blank" href="<?php echo esc_url( apply_filters( 'inspirar_pro_theme_url', 'https://wpmanageninja.com/downloads/inspirar-pro-multipurpose-wordpress-theme-for-unlimited-website/' ) ); ?>"><?php esc_html_e('Visit Here', 'inspirar'); ?></a>
+                   
 				</div>
 				<div class="inspirar-screenshot">
-					<a target="_blank" href="<?php echo esc_url( apply_filters( 'inspirar_pro_theme_url', 'https://wpmanageninja.com/downloads/sciencex-multipurpose-researcher-professor-education-wordpress-theme/' ) ); ?>">
+					<a target="_blank" href="<?php echo esc_url( apply_filters( 'inspirar_pro_theme_url', 'https://wpmanageninja.com/downloads/inspirar-pro-multipurpose-wordpress-theme-for-unlimited-website/' ) ); ?>">
 					<img src="<?php echo esc_url( get_template_directory_uri() ) . '/screenshot.png'; ?>" />
 					</a>
 				</div>

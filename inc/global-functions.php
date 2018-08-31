@@ -274,7 +274,7 @@ if( !function_exists( 'inspirar_footer_copyright_custom_text' ) ){
 		        'em' => array(),
 		        'strong' => array()
 		    );
-			echo wp_kses( $custom_text, $allowed_tags);
+			echo '<p>'.wp_kses( $custom_text, $allowed_tags).'</p>';
 	   	 } else { ?>
             <div class="copyright-default text-center">
             <p>

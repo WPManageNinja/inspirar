@@ -346,13 +346,15 @@ function inspirar_modify_comment_form_fields($fields){
 }
 add_filter('comment_form_default_fields','inspirar_modify_comment_form_fields');
 
+if(!defined('INSPIRAR_PRO_ACTIVATED')) 
+{
+    /* Calling in the admin area for the Welcome Page */
+    if ( is_admin() ) {
+        require get_template_directory() . '/inc/admin/inspirar-admin-page.php';
+    }
 
-/* Calling in the admin area for the Welcome Page */
-if ( is_admin() ) {
-	require get_template_directory() . '/inc/admin/inspirar-admin-page.php';
-}
-
-/**
- * Load upsell button in the customizer
- */
+    /**
+     * Load upsell button in the customizer
+     */
     require get_template_directory() . '/inc/upsell/class-customize.php';
+}
